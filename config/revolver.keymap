@@ -1,0 +1,81 @@
+// based on https://github.com/zmkfirmware/zmk/blob/main/app/boards/shields/cradio/cradio.keymap
+// and https://github.com/christianselig/caldera-keyboard/blob/main/zmk-config-caldera/config/caldera.keymap
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+#define kO 2
+#define kA 3
+#define kT 4
+#define kE 5
+#define kN 8
+#define kR 9
+#define kI 10
+#define kS 11
+
+//	|	SW02	|	SW03	|	SW04	|	SW05	|	|	SW08	|	SW09	|	SW10	|	SW11	|
+//	|	SW01	|	SW00	|																	|	SW06	|	SW07	|
+
+//   ---------------------------------------------------------------------------------------------------
+//	|	O 		|	A 		|	T 		|	E 		|	|	N 		|	R 		|	I 		|	S 		|
+//	|	SPACE	|	TAB		|																	|	RET		|	BSPC	|
+
+/ {
+    combos {
+        // blank combo:	combo_ { timeout-ms = <50>; key-positions = <>; bindings = <&kp >; };
+				// regex find: 	(combo_)([a-z0-9]+)( .+kp)( >)
+				// replace:		\1\2\3 \2\4
+        compatible = "zmk,combos";
+				combo_h { timeout-ms = <50>; key-positions = <kE kN>; bindings = <&kp h>; };
+				combo_d { timeout-ms = <50>; key-positions = <kT kN>; bindings = <&kp d>; };
+				combo_l { timeout-ms = <50>; key-positions = <kA kN>; bindings = <&kp l>; };
+				combo_f { timeout-ms = <50>; key-positions = <kE kR>; bindings = <&kp f>; };
+				combo_c { timeout-ms = <50>; key-positions = <kE kI>; bindings = <&kp c>; };
+				combo_m { timeout-ms = <50>; key-positions = <kT kR>; bindings = <&kp m>; };
+				combo_u { timeout-ms = <50>; key-positions = <kA kR>; bindings = <&kp u>; };
+				combo_g { timeout-ms = <50>; key-positions = <kT kI>; bindings = <&kp g>; };
+				combo_y { timeout-ms = <50>; key-positions = <kA kS>; bindings = <&kp y>; };
+				combo_p { timeout-ms = <50>; key-positions = <kN kR>; bindings = <&kp p>; };
+				combo_w { timeout-ms = <50>; key-positions = <kT kE>; bindings = <&kp w>; };
+				combo_b { timeout-ms = <50>; key-positions = <kR kI>; bindings = <&kp b>; };
+				combo_v { timeout-ms = <50>; key-positions = <kA kT>; bindings = <&kp v>; };
+				combo_k { timeout-ms = <50>; key-positions = <kN kI>; bindings = <&kp k>; };
+				combo_j { timeout-ms = <50>; key-positions = <kA kE>; bindings = <&kp j>; };
+				combo_x { timeout-ms = <50>; key-positions = <kR kS>; bindings = <&kp x>; };
+				combo_z { timeout-ms = <50>; key-positions = <kO kT>; bindings = <&kp z>; };
+				combo_q { timeout-ms = <50>; key-positions = <kO kS>; bindings = <&kp q>; };
+				
+				combo_dot { timeout-ms = <50>; key-positions = <kI kS>; bindings = <&kp dot>; };
+				combo_comma { timeout-ms = <50>; key-positions = <kO kA>; bindings = <&kp comma>; };
+				combo_qmark { timeout-ms = <50>; key-positions = <kN kS>; bindings = <&kp qmark>; };
+				combo_excl { timeout-ms = <50>; key-positions = <kO kE>; bindings = <&kp excl>; };
+				combo_sqt { timeout-ms = <50>; key-positions = <kO kA kN>; bindings = <&kp sqt>; };
+				
+				combo_n0 { timeout-ms = <50>; key-positions = <kO kI kS>; bindings = <&kp n0>; };
+				combo_n1 { timeout-ms = <50>; key-positions = <kA kI kS>; bindings = <&kp n1>; };
+				combo_n2 { timeout-ms = <50>; key-positions = <kT kI kS>; bindings = <&kp n2>; };
+				combo_n3 { timeout-ms = <50>; key-positions = <kE kI kS>; bindings = <&kp n3>; };
+				combo_n4 { timeout-ms = <50>; key-positions = <kN kI kS>; bindings = <&kp n4>; };
+				combo_n5 { timeout-ms = <50>; key-positions = <kO kR kI kS>; bindings = <&kp n5>; };
+				combo_n6 { timeout-ms = <50>; key-positions = <kA kR kI kS>; bindings = <&kp n6>; };
+				combo_n7 { timeout-ms = <50>; key-positions = <kT kR kI kS>; bindings = <&kp n7>; };
+				combo_n8 { timeout-ms = <50>; key-positions = <kE kR kI kS>; bindings = <&kp n8>; };
+				combo_n9 { timeout-ms = <50>; key-positions = <kN kR kI kS>; bindings = <&kp n9>; };
+    };
+};
+
+/ {
+        keymap {
+			compatible = "zmk,keymap";
+
+			default_layer {
+				bindings = <
+				&kp SPACE 	&kp TAB	
+				&kp O		&kp A		&kp T		&kp E
+				&kp RET		&kp BSPC 
+				&kp N		&kp R		&kp I		&kp S
+                >;
+			};
+        };
+};

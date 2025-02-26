@@ -1,0 +1,7 @@
+//based on https://github.com/zmkfirmware/zmk/blob/main/app/boards/shields/cradio/cradio_right.overlay
+
+#include "revolver.dtsi"
+
+&default_transform { 
+    col-offset = <6>;
+};

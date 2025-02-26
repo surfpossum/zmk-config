@@ -1,0 +1,5 @@
+config SHIELD_REVOLVER_LEFT
+    def_bool $(shields_list_contains,revolver_left)
+
+config SHIELD_REVOLVER_RIGHT
+    def_bool $(shields_list_contains,revolver_right)
