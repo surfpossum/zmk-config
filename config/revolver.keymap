@@ -62,7 +62,8 @@
 				combo_n7 { timeout-ms = <50>; key-positions = <kT kR kI kS>; bindings = <&kp N7>; };
 				combo_n8 { timeout-ms = <50>; key-positions = <kE kR kI kS>; bindings = <&kp N8>; };
 				combo_n9 { timeout-ms = <50>; key-positions = <kN kR kI kS>; bindings = <&kp N9>; };
-    
+    };
+	
 	keymap {
 		compatible = "zmk,keymap";
 
