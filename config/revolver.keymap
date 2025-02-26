@@ -69,10 +69,10 @@
 
 		default_layer {
 			bindings = <
-			&kp SPACE 	&kp TAB	
 			&kp O		&kp A		&kp T		&kp E
-			&kp RET		&kp BSPC 
+			&kp SPACE 	&kp TAB	
 			&kp N		&kp R		&kp I		&kp S
+			&kp RET		&kp BSPC 
 			>;
 		};
 	};
