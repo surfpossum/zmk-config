@@ -27,28 +27,24 @@
 				// regex find: 	(combo_)([a-z0-9]+)( .+kp)( >)
 				// replace:		\1\2\3 \2\4
         compatible = "zmk,combos";
-				combo_h { 
-					timeout-ms = <50>;
-					key-positions = <5 8>;
-					bindings = <&kp h>;
-				};
-				combo_d { timeout-ms = <50>; key-positions = <kT kN>; bindings = <&kp d>; };
-				combo_l { timeout-ms = <50>; key-positions = <kA kN>; bindings = <&kp l>; };
-				combo_f { timeout-ms = <50>; key-positions = <kE kR>; bindings = <&kp f>; };
-				combo_c { timeout-ms = <50>; key-positions = <kE kI>; bindings = <&kp c>; };
-				combo_m { timeout-ms = <50>; key-positions = <kT kR>; bindings = <&kp m>; };
-				combo_u { timeout-ms = <50>; key-positions = <kA kR>; bindings = <&kp u>; };
-				combo_g { timeout-ms = <50>; key-positions = <kT kI>; bindings = <&kp g>; };
-				combo_y { timeout-ms = <50>; key-positions = <kA kS>; bindings = <&kp y>; };
-				combo_p { timeout-ms = <50>; key-positions = <kN kR>; bindings = <&kp p>; };
-				combo_w { timeout-ms = <50>; key-positions = <kT kE>; bindings = <&kp w>; };
-				combo_b { timeout-ms = <50>; key-positions = <kR kI>; bindings = <&kp b>; };
-				combo_v { timeout-ms = <50>; key-positions = <kA kT>; bindings = <&kp v>; };
-				combo_k { timeout-ms = <50>; key-positions = <kN kI>; bindings = <&kp k>; };
-				combo_j { timeout-ms = <50>; key-positions = <kA kE>; bindings = <&kp j>; };
-				combo_x { timeout-ms = <50>; key-positions = <kR kS>; bindings = <&kp x>; };
-				combo_z { timeout-ms = <50>; key-positions = <kO kT>; bindings = <&kp z>; };
-				combo_q { timeout-ms = <50>; key-positions = <kO kS>; bindings = <&kp q>; };
+				combo_h { timeout-ms = <50>; key-positions = <5 8>; bindings = <&kp H>; };
+				combo_d { timeout-ms = <50>; key-positions = <kT kN>; bindings = <&kp D>; };
+				combo_l { timeout-ms = <50>; key-positions = <kA kN>; bindings = <&kp L>; };
+				combo_f { timeout-ms = <50>; key-positions = <kE kR>; bindings = <&kp F>; };
+				combo_c { timeout-ms = <50>; key-positions = <kE kI>; bindings = <&kp C>; };
+				combo_m { timeout-ms = <50>; key-positions = <kT kR>; bindings = <&kp M>; };
+				combo_u { timeout-ms = <50>; key-positions = <kA kR>; bindings = <&kp U>; };
+				combo_g { timeout-ms = <50>; key-positions = <kT kI>; bindings = <&kp G>; };
+				combo_y { timeout-ms = <50>; key-positions = <kA kS>; bindings = <&kp Y>; };
+				combo_p { timeout-ms = <50>; key-positions = <kN kR>; bindings = <&kp P>; };
+				combo_w { timeout-ms = <50>; key-positions = <kT kE>; bindings = <&kp W>; };
+				combo_b { timeout-ms = <50>; key-positions = <kR kI>; bindings = <&kp B>; };
+				combo_v { timeout-ms = <50>; key-positions = <kA kT>; bindings = <&kp V>; };
+				combo_k { timeout-ms = <50>; key-positions = <kN kI>; bindings = <&kp K>; };
+				combo_j { timeout-ms = <50>; key-positions = <kA kE>; bindings = <&kp J>; };
+				combo_x { timeout-ms = <50>; key-positions = <kR kS>; bindings = <&kp X>; };
+				combo_z { timeout-ms = <50>; key-positions = <kO kT>; bindings = <&kp Z>; };
+				combo_q { timeout-ms = <50>; key-positions = <kO kS>; bindings = <&kp Q>; };
 				
 				combo_dot { timeout-ms = <50>; key-positions = <kI kS>; bindings = <&kp dot>; };
 				combo_comma { timeout-ms = <50>; key-positions = <kO kA>; bindings = <&kp comma>; };
