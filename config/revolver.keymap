@@ -27,7 +27,7 @@
 				// regex find: 	(combo_)([a-z0-9]+)( .+kp)( >)
 				// replace:		\1\2\3 \2\4
         compatible = "zmk,combos";
-				combo_h { timeout-ms = <50>; key-positions = <kE kN>; bindings = <&kp h>; };
+				combo_h { timeout-ms = <50>; key-positions = <5 8>; bindings = <&kp h>; };
 				combo_d { timeout-ms = <50>; key-positions = <kT kN>; bindings = <&kp d>; };
 				combo_l { timeout-ms = <50>; key-positions = <kA kN>; bindings = <&kp l>; };
 				combo_f { timeout-ms = <50>; key-positions = <kE kR>; bindings = <&kp f>; };
