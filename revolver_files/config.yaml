@@ -1,0 +1,263 @@
+units:
+  # Proxy Spacing Variables
+  kx: cx
+  ky: cy
+  # Padding Variables
+  px: kx + 2
+  py: ky + 2
+  pushX: 10
+  pushY: 10
+
+points:
+  zones:
+    matrix:
+      # Fix placement on KiCAD sheet.
+      anchor:
+        shift: [100, -100]
+      key:
+        padding: 1ky
+        spread: 1kx
+      rows:
+        mod:
+        home:
+      columns:
+        pinky:
+          key:
+            column_net: P111
+          rows.mod.skip: true
+        pinkymod:
+          key:
+            column_net: P010
+            spread: 0
+          rows.home.skip: true
+        ring:
+          key:
+            column_net: P113
+          rows.mod.skip: true
+        ringmod:
+          key:
+            column_net: P009
+            spread: 0
+          rows.home.skip: true
+        middle:
+          key:
+            column_net: P115
+          rows.mod.skip: true
+        index:
+          key:
+            column_net: P002
+          rows.mod.skip: true
+  mirror: &mirror
+    ref: matrix_index_home
+    distance: 10kx
+outlines:
+  raw:
+    - what: rectangle
+      where: true
+      size: [px, py]
+  keys:
+    - what: rectangle
+      where: true
+      size: [kx-0.5,ky-0.5]
+  board_left:
+    - what: rectangle
+      operation: stack
+      where:
+        - ref: matrix_index_home
+          rotate: 123
+          shift: [46,-28]
+      size: [34, 18]
+    - what: rectangle
+      operation: stack
+      where:
+        - ref: matrix_index_home
+          shift: [10,-8]
+      size: [34, 10]
+    - what: polygon
+      points:
+        - ref: matrix_pinky_home
+          shift: [-0.5px,0.5py]
+        - ref: matrix_index_home
+          shift: [0.5px,0.5py]
+        - ref: matrix_index_home
+          shift: [30,6]
+        - ref: matrix_index_home
+          shift: [44.3,-8.86]
+        - ref: matrix_index_home
+          shift: [29.5,-19]
+        - ref: matrix_index_home
+          shift: [0.5px,-0.5py]
+        - ref: matrix_ringmod_mod
+          shift: [px,-0.5py]
+        - ref: matrix_pinkymod_mod
+          shift: [-0.5px,-0.5py]
+      expand: 0.5)
+      fillet: 3
+  board_right:
+    - what: rectangle
+      operation: stack
+      where:
+        - ref: mirror_matrix_index_home
+          rotate: 123
+          shift: [46,-28]
+      size: [34, 18]
+    - what: rectangle
+      operation: stack
+      where:
+        - ref: mirror_matrix_index_home
+          shift: [10,-8]
+      size: [34, 10]
+    - what: polygon
+      points:
+        - ref: mirror_matrix_pinky_home
+          shift: [-0.5px,0.5py]
+        - ref: mirror_matrix_index_home
+          shift: [0.5px,0.5py]
+        - ref: mirror_matrix_index_home
+          shift: [30,6]
+        - ref: mirror_matrix_index_home
+          shift: [44.3,-8.86]
+        - ref: mirror_matrix_index_home
+          shift: [29.5,-19]
+        - ref: mirror_matrix_index_home
+          shift: [0.5px,-0.5py]
+        - ref: mirror_matrix_ringmod_mod
+          shift: [px,-0.5py]
+        - ref: mirror_matrix_pinkymod_mod
+          shift: [-0.5px,-0.5py]
+      expand: 0.5)
+      fillet: 3
+  combo:
+    - name: board_left
+    - operation: add
+      name: board_right
+    - operation: subtract
+      name: keys
+pcbs:
+  revolver_reversible:
+    outlines:
+      main:
+        outline: board_left
+    footprints:
+#      choc_r:
+#        what: choc
+#        where: /^matrix_.*/
+#        params:
+#          keycaps: true
+#          reverse: true
+#          hotswap: false
+#          from: "{{column_net}}"
+#          to: GND
+      choc_hotswap_r:
+        what: choc
+        where: /^matrix_.*/
+        params:
+          keycaps: true
+          reverse: true
+          hotswap: true
+          from: "{{column_net}}"
+          to: GND
+      nice_nano:
+        what: nice_nano
+        params:
+          orientation: "up"
+        where:
+          ref: matrix_index_home
+          shift: [46,-28]
+          rotate: 123
+      #reverse nano
+#      nice_nano_r:
+#        what: nice_nano
+#        params:
+#          orientation: "down"
+#        where:
+#          ref: matrix_index_home
+#          shift: [46,-28]
+#          rotate: 123
+      # Battery jack
+      jstph:
+        what: jstph
+        where:
+          ref: matrix_index_home
+          shift: [8, -8]
+          rotate: -90
+        params:
+          side: B
+          pos: pos
+          neg: GND
+      #reverse Battery jack
+      jstph_r:
+        what: jstph
+        where:
+          ref: matrix_index_home
+          shift: [12, -8]
+          rotate: -90
+        params:
+          side: F
+          pos: pos
+          neg: GND
+      # Reset switch (horizontal community version)
+      horizontal_reset:
+        what: EVQPUC
+        params: 
+          side: B
+          from: GND
+          to: RST 
+        where:
+          ref: matrix_index_home
+          shift: [37.0, -4.8]
+          rotate: -46
+      #reverse Reset switch (horizontal community version)
+      horizontal_reset_r:
+        what: EVQPUC
+        params: 
+          side: F
+          from: GND
+          to: RST 
+        where:
+          ref: matrix_index_home
+          shift: [37.0, -4.8]
+          rotate: -46
+      # Battery on/off switch
+      battery_switch:
+        what: slider
+        where:
+          ref: matrix_index_home
+          shift: [31.5, 3.0]
+          rotate: -46
+        params:
+          side: B
+          from: pos
+          to: RAW
+      #reverse Battery on/off switch
+      battery_switch_r:
+        what: slider
+        where:
+          ref: matrix_index_home
+          shift: [31.5, 3.0]
+          rotate: -46
+        params:
+          side: F
+          from: pos
+          to: RAW
+      # Mounting holes
+      hole_bottom_center:
+        what: mountinghole
+        where:
+          ref: matrix_middle_home
+          shift: [0, -24]
+      hole_left:
+        what: mountinghole
+        where:
+          ref: matrix_pinky_home
+          shift: [-8, -4]
+      hole_center:
+        what: mountinghole
+        where:
+          ref: matrix_index_home
+          shift: [18, -4]
+      hole_handle:
+        what: mountinghole
+        where:
+          ref: matrix_index_home
+          shift: [51, -36]

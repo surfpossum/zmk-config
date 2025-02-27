@@ -14,12 +14,12 @@
 #define kI 10
 #define kS 11
 
-//	|	SW02	|	SW03	|	SW04	|	SW05	|	|	SW08	|	SW09	|	SW10	|	SW11	|
-//	|	SW01	|	SW00	|																	|	SW06	|	SW07	|
+// | SW00 | SW01 | SW02 | SW03 | | SW06 | SW07 | SW08 | SW09 |
+// | SW04 | SW05 |                             | SW10 | SW11 |
 
 //   ---------------------------------------------------------------------------------------------------
 //	|	O 		|	A 		|	T 		|	E 		|	|	N 		|	R 		|	I 		|	S 		|
-//	|	SPACE	|	TAB		|																	|	RET		|	BSPC	|
+//	|	SPACE	|	TAB		|													|	RET		|	BSPC	|
 
 / {
     combos {
