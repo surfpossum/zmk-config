@@ -5,27 +5,41 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+#define NUMLAYER 1
+#define nk0 0
+#define nk1 1
+#define nk2 2
+#define nk3 3
+#define nk4 6
+#define nk5 7
+
+#define SYMLAYER 2
+
+
+#define FUNCLAYER 3
+
 #define kO 0
 #define kA 1
 #define kT 2
 #define kE 3
+#define lm1 4
+#define lm2 5
 #define kN 6
 #define kR 7
 #define kI 8
 #define kS 9
+#define rm1 10
+#define rm2 11
+#define CAD_ESC      &mt LC(LA(DEL)) ESC      //hold: control alt delete | tap: escape
 
 // | SW00 | SW01 | SW02 | SW03 | | SW06 | SW07 | SW08 | SW09 |
 // | SW04 | SW05 |                             | SW10 | SW11 |
-
-//   ---------------------------------------------------------------------------------------------------
-//	|	O 		|	A 		|	T 		|	E 		|	|	N 		|	R 		|	I 		|	S 		|
-//	|	SPACE	|	TAB		|																	|	RET		|	BSPC	|
+//  ---------------------------------------------------------
+// | O    | A    | T    | E    | | N    | R    | I    | S    |
+// | SPC  | TAB  |                             | RET  | BSPC |
 
 / {
     combos {
-        // blank combo:	combo_ { timeout-ms = <50>; key-positions = <>; bindings = <&kp >; };
-				// regex find: 	(combo_)([a-z0-9]+)( .+kp)( >)
-				// replace:		\1\2\3 \2\4
         compatible = "zmk,combos";
 				combo_h { timeout-ms = <50>; key-positions = <kE kN>; bindings = <&kp H>; };
 				combo_d { timeout-ms = <50>; key-positions = <kT kN>; bindings = <&kp D>; };
@@ -46,23 +60,45 @@
 				combo_z { timeout-ms = <50>; key-positions = <kO kT>; bindings = <&kp Z>; };
 				combo_q { timeout-ms = <50>; key-positions = <kO kS>; bindings = <&kp Q>; };
 				
-				combo_dot { timeout-ms = <50>; key-positions = <kI kS>; bindings = <&kp DOT>; };
+				combo_space_dot { timeout-ms = <50>; key-positions = <kI kS>; bindings = <&mt SPACE DOT>; };
 				combo_comma { timeout-ms = <50>; key-positions = <kO kA>; bindings = <&kp COMMA>; };
 				combo_qmark { timeout-ms = <50>; key-positions = <kN kS>; bindings = <&kp QMARK>; };
 				combo_excl { timeout-ms = <50>; key-positions = <kO kE>; bindings = <&kp EXCL>; };
 				combo_sqt { timeout-ms = <50>; key-positions = <kO kA kN>; bindings = <&kp SQT>; };
 				
-				combo_n0 { timeout-ms = <50>; key-positions = <kO kI kS>; bindings = <&kp N0>; };
-				combo_n1 { timeout-ms = <50>; key-positions = <kA kI kS>; bindings = <&kp N1>; };
-				combo_n2 { timeout-ms = <50>; key-positions = <kT kI kS>; bindings = <&kp N2>; };
-				combo_n3 { timeout-ms = <50>; key-positions = <kE kI kS>; bindings = <&kp N3>; };
-				combo_n4 { timeout-ms = <50>; key-positions = <kN kI kS>; bindings = <&kp N4>; };
-				combo_n5 { timeout-ms = <50>; key-positions = <kO kR kI kS>; bindings = <&kp N5>; };
-				combo_n6 { timeout-ms = <50>; key-positions = <kA kR kI kS>; bindings = <&kp N6>; };
-				combo_n7 { timeout-ms = <50>; key-positions = <kT kR kI kS>; bindings = <&kp N7>; };
-				combo_n8 { timeout-ms = <50>; key-positions = <kE kR kI kS>; bindings = <&kp N8>; };
-				combo_n9 { timeout-ms = <50>; key-positions = <kN kR kI kS>; bindings = <&kp N9>; };
+				combo_numLayer { timeout-ms = <50>; key-positions = <rm2>; bindings = <&mo NUMLAYER>; };
+				combo_n6 { timeout-ms = <50>; key-positions = <nk1 nk5>; bindings = <&mt N6 CARET>; };
+				combo_n6 { timeout-ms = <50>; key-positions = <nk2 nk4>; bindings = <&mt N6 CARET>; };
+				combo_n7 { timeout-ms = <50>; key-positions = <nk2 nk5>; bindings = <&mt N7 AMPS>; };
+				combo_n7 { timeout-ms = <50>; key-positions = <nk3 nk4>; bindings = <&mt N7 AMPS>; };
+				combo_n8 { timeout-ms = <50>; key-positions = <nk3 nk5>; bindings = <&mt N8 STAR>; };
+				combo_n9 { timeout-ms = <50>; key-positions = <nk4 nk5>; bindings = <&mt N9 LPAR>; };
+				
+				combo_symLayer { timeout-ms = <50>; key-positions = <rm1 rm2>; bindings = <&mo SYMLAYER>; };
+				
+				combo_funcLayer { timeout-ms = <50>; key-positions = <rm1 rm2>; bindings = <&mo FUNCLAYER>; };
+				
+				//delete
+				//arrow keys
+				//brackets
+				//slashes
+				//colon
+				//function
+				//os
+				//mods
     };
+		
+	behaviors {
+		skq: sticky_key_quick_release {
+			compatible = "zmk,behavior-sticky-key";
+			#binding-cells = <1>;
+			bindings = <&kp>;
+			release-after-ms = <5000>;
+			quick-release;
+			lazy;
+			ignore-modifiers;
+		};
+	};
 	
 	keymap {
 		compatible = "zmk,keymap";
@@ -73,6 +109,33 @@
 			&kp SPACE 	&kp TAB	
 			&kp N		&kp R		&kp I		&kp S
 			&kp RET		&kp BSPC 
+			>;
+		};
+
+		number_layer {
+			bindings = <
+			&mt N1 EXCL		&mt N2 AT		&mt N3 HASH		&mt N4 DLLR
+			&kp SPACE 	&kp TAB	
+			&mt PRCT N5		&mt RPAR N0		&kp A		&kp B
+			&kp N9		&none 
+			>;
+		};
+
+		symbol_layer {
+			bindings = <
+			&mt N1 EXCL		&mt N2 AT		&mt N3 HASH		&mt N4 DLLR
+			&kp SPACE 	&kp TAB	
+			&mt PRCT N5		&mt RPAR N0		&kp A		&kp B
+			&none		&none 
+			>;
+		};
+
+		function_layer {
+			bindings = <
+			&mt N1 EXCL		&mt N2 AT		&mt N3 HASH		&mt N4 DLLR
+			&kp SPACE 	&kp TAB	
+			&mt N5 PRCT		&mt N0 RPAR		&kp A		&kp B
+			&none		CAD_ESC
 			>;
 		};
 	};
