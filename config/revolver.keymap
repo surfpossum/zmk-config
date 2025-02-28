@@ -5,21 +5,21 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-#define kO 2
-#define kA 3
-#define kT 4
-#define kE 5
-#define kN 8
-#define kR 9
-#define kI 10
-#define kS 11
+#define kO 0
+#define kA 1
+#define kT 2
+#define kE 3
+#define kN 6
+#define kR 7
+#define kI 8
+#define kS 9
 
 // | SW00 | SW01 | SW02 | SW03 | | SW06 | SW07 | SW08 | SW09 |
 // | SW04 | SW05 |                             | SW10 | SW11 |
 
 //   ---------------------------------------------------------------------------------------------------
 //	|	O 		|	A 		|	T 		|	E 		|	|	N 		|	R 		|	I 		|	S 		|
-//	|	SPACE	|	TAB		|													|	RET		|	BSPC	|
+//	|	SPACE	|	TAB		|																	|	RET		|	BSPC	|
 
 / {
     combos {
@@ -27,7 +27,7 @@
 				// regex find: 	(combo_)([a-z0-9]+)( .+kp)( >)
 				// replace:		\1\2\3 \2\4
         compatible = "zmk,combos";
-				combo_h { timeout-ms = <50>; key-positions = <5 8>; bindings = <&kp H>; };
+				combo_h { timeout-ms = <50>; key-positions = <kE kN>; bindings = <&kp H>; };
 				combo_d { timeout-ms = <50>; key-positions = <kT kN>; bindings = <&kp D>; };
 				combo_l { timeout-ms = <50>; key-positions = <kA kN>; bindings = <&kp L>; };
 				combo_f { timeout-ms = <50>; key-positions = <kE kR>; bindings = <&kp F>; };
