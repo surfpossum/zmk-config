@@ -68,9 +68,9 @@
 				
 				combo_numLayer { timeout-ms = <50>; key-positions = <rm2>; bindings = <&mo NUMLAYER>; };
 				combo_n6 { timeout-ms = <50>; key-positions = <nk1 nk5>; bindings = <&mt N6 CARET>; };
-				combo_n6 { timeout-ms = <50>; key-positions = <nk2 nk4>; bindings = <&mt N6 CARET>; };
+				combo_n6b { timeout-ms = <50>; key-positions = <nk2 nk4>; bindings = <&mt N6 CARET>; };
 				combo_n7 { timeout-ms = <50>; key-positions = <nk2 nk5>; bindings = <&mt N7 AMPS>; };
-				combo_n7 { timeout-ms = <50>; key-positions = <nk3 nk4>; bindings = <&mt N7 AMPS>; };
+				combo_n7b { timeout-ms = <50>; key-positions = <nk3 nk4>; bindings = <&mt N7 AMPS>; };
 				combo_n8 { timeout-ms = <50>; key-positions = <nk3 nk5>; bindings = <&mt N8 STAR>; };
 				combo_n9 { timeout-ms = <50>; key-positions = <nk4 nk5>; bindings = <&mt N9 LPAR>; };
 				
