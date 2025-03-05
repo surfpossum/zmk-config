@@ -43,6 +43,14 @@
     key-positions = <KEYPOS>; \
     layers = <LAYERS>; \
   };
+	
+#define TAPDANCE(NAME, BINDINGS, TAPTERM) \
+	td_NAME: tap_dance_NAME { \
+		compatible = "zmk,behavior-tap-dance"; \
+		#binding-cells = <0>; \
+		tapping-term-ms = <TAPTERM>; \
+		bindings = <BINDINGS>; \
+	};
 
 // | SW00 | SW01 | SW02 | SW03 | | SW06 | SW07 | SW08 | SW09 |
 // | SW04 | SW05 |                             | SW10 | SW11 |
@@ -115,6 +123,7 @@
 			lazy;
 			ignore-modifiers;
 		};
+		
 		as: auto_shift {
 			compatible = "zmk,behavior-hold-tap";
 			label = "AUTO_SHIFT";
@@ -124,6 +133,8 @@
 			flavor = "tap-preferred";
 			bindings = <&kp>, <&kp>;
 		};
+		
+		TAPDANCE(kp_mo, (<&kp>, <&mo>), 150)
 	};
 	
 	keymap {
@@ -143,7 +154,7 @@
 				AS(I)
 				AS(S)
 				&kp RET
-				&lt NUMLAYER BSPC
+				&td_kp_mo BSPC NUMLAYER
 			>;
 		};
 
