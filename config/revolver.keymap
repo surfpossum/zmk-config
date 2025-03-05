@@ -28,9 +28,10 @@
 #define kR 7
 #define kI 8
 #define kS 9
-#define rm1 10
-#define rm2 11
+#define rm1 11
+#define rm2 10
 #define CAD_ESC      &mt LC(LA(DEL)) ESC      //hold: control alt delete | tap: escape
+#define AS(keycode) &as LS(keycode) keycode
 
 // | SW00 | SW01 | SW02 | SW03 | | SW06 | SW07 | SW08 | SW09 |
 // | SW04 | SW05 |                             | SW10 | SW11 |
@@ -41,24 +42,24 @@
 / {
     combos {
         compatible = "zmk,combos";
-				combo_h { timeout-ms = <50>; key-positions = <kE kN>; bindings = <&kp H>; };
-				combo_d { timeout-ms = <50>; key-positions = <kT kN>; bindings = <&kp D>; };
-				combo_l { timeout-ms = <50>; key-positions = <kA kN>; bindings = <&kp L>; };
-				combo_f { timeout-ms = <50>; key-positions = <kE kR>; bindings = <&kp F>; };
-				combo_c { timeout-ms = <50>; key-positions = <kE kI>; bindings = <&kp C>; };
-				combo_m { timeout-ms = <50>; key-positions = <kT kR>; bindings = <&kp M>; };
-				combo_u { timeout-ms = <50>; key-positions = <kA kR>; bindings = <&kp U>; };
-				combo_g { timeout-ms = <50>; key-positions = <kT kI>; bindings = <&kp G>; };
-				combo_y { timeout-ms = <50>; key-positions = <kA kS>; bindings = <&kp Y>; };
-				combo_p { timeout-ms = <50>; key-positions = <kN kR>; bindings = <&kp P>; };
-				combo_w { timeout-ms = <50>; key-positions = <kT kE>; bindings = <&kp W>; };
-				combo_b { timeout-ms = <50>; key-positions = <kR kI>; bindings = <&kp B>; };
-				combo_v { timeout-ms = <50>; key-positions = <kA kT>; bindings = <&kp V>; };
-				combo_k { timeout-ms = <50>; key-positions = <kN kI>; bindings = <&kp K>; };
-				combo_j { timeout-ms = <50>; key-positions = <kA kE>; bindings = <&kp J>; };
-				combo_x { timeout-ms = <50>; key-positions = <kR kS>; bindings = <&kp X>; };
-				combo_z { timeout-ms = <50>; key-positions = <kO kT>; bindings = <&kp Z>; };
-				combo_q { timeout-ms = <50>; key-positions = <kO kS>; bindings = <&kp Q>; };
+				combo_h { timeout-ms = <50>; key-positions = <kE kN>; bindings = <AS(H)>; };
+				combo_d { timeout-ms = <50>; key-positions = <kT kN>; bindings = <AS(D)>; };
+				combo_l { timeout-ms = <50>; key-positions = <kA kN>; bindings = <AS(L)>; };
+				combo_f { timeout-ms = <50>; key-positions = <kE kR>; bindings = <AS(F)>; };
+				combo_c { timeout-ms = <50>; key-positions = <kE kI>; bindings = <AS(C)>; };
+				combo_m { timeout-ms = <50>; key-positions = <kT kR>; bindings = <AS(M)>; };
+				combo_u { timeout-ms = <50>; key-positions = <kA kR>; bindings = <AS(U)>; };
+				combo_g { timeout-ms = <50>; key-positions = <kT kI>; bindings = <AS(G)>; };
+				combo_y { timeout-ms = <50>; key-positions = <kA kS>; bindings = <AS(Y)>; };
+				combo_p { timeout-ms = <50>; key-positions = <kN kR>; bindings = <AS(P)>; };
+				combo_w { timeout-ms = <50>; key-positions = <kT kE>; bindings = <AS(W)>; };
+				combo_b { timeout-ms = <50>; key-positions = <kR kI>; bindings = <AS(B)>; };
+				combo_v { timeout-ms = <50>; key-positions = <kA kT>; bindings = <AS(V)>; };
+				combo_k { timeout-ms = <50>; key-positions = <kN kI>; bindings = <AS(K)>; };
+				combo_j { timeout-ms = <50>; key-positions = <kA kE>; bindings = <AS(J)>; };
+				combo_x { timeout-ms = <50>; key-positions = <kR kS>; bindings = <AS(X)>; };
+				combo_z { timeout-ms = <50>; key-positions = <kO kT>; bindings = <AS(Z)>; };
+				combo_q { timeout-ms = <50>; key-positions = <kO kS>; bindings = <AS(Q)>; };
 				
 				combo_space_dot { timeout-ms = <50>; key-positions = <kI kS>; bindings = <&mt SPACE DOT>; };
 				combo_comma { timeout-ms = <50>; key-positions = <kO kA>; bindings = <&kp COMMA>; };
@@ -76,7 +77,9 @@
 				
 				combo_symLayer { timeout-ms = <50>; key-positions = <rm1 rm2>; bindings = <&mo SYMLAYER>; };
 				
-				combo_funcLayer { timeout-ms = <50>; key-positions = <rm1 rm2>; bindings = <&mo FUNCLAYER>; };
+				//combo_funcLayer { timeout-ms = <50>; key-positions = <rm1 rm2>; bindings = <&mo FUNCLAYER>; };
+				
+				combo_bluetoothSwitch { timeout-ms = <50>; key-positions = <rm1 lm1>; bindings = <&bt BT_NXT>; };
 				
 				//delete
 				//arrow keys
@@ -98,6 +101,15 @@
 			lazy;
 			ignore-modifiers;
 		};
+		as: auto_shift {
+			compatible = "zmk,behavior-hold-tap";
+			label = "AUTO_SHIFT";
+			#binding-cells = <2>;
+			tapping_term_ms = <135>;
+			quick_tap_ms = <0>;
+			flavor = "tap-preferred";
+			bindings = <&kp>, <&kp>;
+		};
 	};
 	
 	keymap {
@@ -105,9 +117,9 @@
 
 		default_layer {
 			bindings = <
-			&kp O		&kp A		&kp T		&kp E
-			&kp SPACE 	&kp TAB	
-			&kp N		&kp R		&kp I		&kp S
+			AS(O)		AS(A)		AS(T)		AS(E)
+			&kp SPACE 	AS(TAB)	
+			AS(N)		AS(R)		AS(I)		AS(S)
 			&kp RET		&kp BSPC 
 			>;
 		};
