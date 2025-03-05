@@ -134,7 +134,7 @@
 			bindings = <&kp>, <&kp>;
 		};
 		
-		TAPDANCE(kp_mo, (<&kp>, <&mo>), 150)
+		TAPDANCE(bkspc_numlayer, (<&kp BSPC>, <&mo NUMLAYER>), 150)
 	};
 	
 	keymap {
@@ -154,7 +154,7 @@
 				AS(I)
 				AS(S)
 				&kp RET
-				&td_kp_mo BSPC NUMLAYER
+				&td_bkspc_numlayer
 			>;
 		};
 
