@@ -165,11 +165,11 @@
 				&mt EXCL N1
 				&mt AT N2
 				&mt HASH N3
-				&mt DLLR N4
+				&kp N4
 				&kp TAB
 				&mt DOT SPACE
 				
-				&mt PRCT N5
+				&kp N5
 				&mt RPAR N0
 				&kp A
 				&kp B
