@@ -93,7 +93,6 @@
 				COMBO(c_n7b, &mt N7 AMPS, nk3 nk4, 1)
 				COMBO(c_n8, &mt N8 STAR, nk3 nk5, 1)
 				COMBO(c_n9, &mt N9 LPAR, nk4 nk5, 1)
-				COMBO(c_NY, AS(Y), kE kN, 1)
 				
 				//COMBO(c_symLayer, &mo SYMLAYER, rm1 rm2, 0)
 				
@@ -172,8 +171,8 @@
 				&mt RPAR N0
 				&kp A
 				&kp B
-				&to SYMLAYER
-				&to 0 
+				&trans
+				&trans 
 			>;
 		};
 
