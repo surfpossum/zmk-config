@@ -7,12 +7,13 @@
 #include <dt-bindings/zmk/pointing.h>
 
 #define NUMLAYER 1
-#define nk0 0
-#define nk1 1
-#define nk2 2
-#define nk3 3
-#define nk4 6
-#define nk5 7
+#define nk0 8
+#define nk1 0
+#define nk2 1
+#define nk3 2
+#define nk4 3
+#define nk5 6
+
 
 #define SYMLAYER 2
 
@@ -38,7 +39,7 @@
 // COMBO(one, &kp N1, 0 10, 0)
 #define COMBO(NAME, BINDINGS, KEYPOS, LAYERS) \
   combo_##NAME { \
-    timeout-ms = <50>; \
+    timeout-ms = <100>; \
     bindings = <BINDINGS>; \
     key-positions = <KEYPOS>; \
     layers = <LAYERS>; \
@@ -93,6 +94,7 @@
 				COMBO(c_n7b, &mt N7 AMPS, nk3 nk4, 1)
 				COMBO(c_n8, &mt N8 STAR, nk3 nk5, 1)
 				COMBO(c_n9, &mt N9 LPAR, nk4 nk5, 1)
+				combo_numTest { timeout-ms = <200>; key-positions = <3 6>; bindings = <&kp Y>; };
 				
 				//COMBO(c_symLayer, &mo SYMLAYER, rm1 rm2, 0)
 				
