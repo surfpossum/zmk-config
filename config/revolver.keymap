@@ -44,12 +44,12 @@
     layers = <LAYERS>; \
   };
 	
-#define TAPDANCE(NAME, BINDINGS, TAPTERM) \
+#define TAPDANCE(NAME, BINDING1, BINDING2, TAPTERM) \
 	td_NAME: tap_dance_NAME { \
 		compatible = "zmk,behavior-tap-dance"; \
 		#binding-cells = <0>; \
 		tapping-term-ms = <TAPTERM>; \
-		bindings = BINDINGS; \
+		bindings = <BINDING1>, <BINDING2>; \
 	};
 
 // | SW00 | SW01 | SW02 | SW03 | | SW06 | SW07 | SW08 | SW09 |
@@ -134,7 +134,7 @@
 			bindings = <&kp>, <&kp>;
 		};
 		
-		TAPDANCE(bkspc_numlayer, (<&kp BSPC>, <&mo NUMLAYER>), 150)
+		TAPDANCE(bkspc_numlayer, &kp BSPC, &to NUMLAYER, 150)
 	};
 	
 	keymap {
@@ -172,7 +172,7 @@
 				&kp A
 				&kp B
 				&kp N9
-				&none 
+				&to 0 
 			>;
 		};
 
