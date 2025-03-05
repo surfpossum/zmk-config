@@ -22,8 +22,8 @@
 #define kA 1
 #define kT 2
 #define kE 3
-#define lm1 4
-#define lm2 5
+#define lm1 5
+#define lm2 4
 #define kN 6
 #define kR 7
 #define kI 8
@@ -79,7 +79,8 @@
 				
 				//combo_funcLayer { timeout-ms = <50>; key-positions = <rm1 rm2>; bindings = <&mo FUNCLAYER>; };
 				
-				combo_bluetoothSwitch { timeout-ms = <50>; key-positions = <rm1 lm1>; bindings = <&bt BT_NXT>; };
+				combo_bluetoothNext { timeout-ms = <50>; key-positions = <rm1 lm2>; bindings = <&bt BT_NXT>; };
+				combo_bluetoothPrev { timeout-ms = <50>; key-positions = <rm2 lm1>; bindings = <&bt BT_PRV>; };
 				
 				//delete
 				//arrow keys
@@ -118,7 +119,7 @@
 		default_layer {
 			bindings = <
 			AS(O)		AS(A)		AS(T)		AS(E)
-			&kp SPACE 	AS(TAB)	
+			&mt DOT SPACE 	AS(TAB)	
 			AS(N)		AS(R)		AS(I)		AS(S)
 			&kp X		&kp BSPC
 			>;
@@ -127,7 +128,7 @@
 		number_layer {
 			bindings = <
 			&mt N1 EXCL		&mt N2 AT		&mt N3 HASH		&mt N4 DLLR
-			&ht DOT SPACE 	&kp TAB	
+			&mt DOT SPACE 	&kp TAB	
 			&mt PRCT N5		&mt RPAR N0		&kp A		&kp B
 			&kp N9		&none 
 			>;
