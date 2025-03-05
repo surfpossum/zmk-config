@@ -67,7 +67,7 @@
 				combo_excl { timeout-ms = <50>; key-positions = <kO kE>; bindings = <&kp EXCL>; };
 				combo_sqt { timeout-ms = <50>; key-positions = <kO kA kN>; bindings = <&kp SQT>; };
 				
-				combo_numLayer { timeout-ms = <50>; key-positions = <rm2>; bindings = <&mo NUMLAYER>; };
+				//combo_numLayer { timeout-ms = <50>; key-positions = <rm2>; bindings = <&mo NUMLAYER>; };
 				combo_n6 { timeout-ms = <50>; key-positions = <nk1 nk5>; bindings = <&mt N6 CARET>; };
 				combo_n6b { timeout-ms = <50>; key-positions = <nk2 nk4>; bindings = <&mt N6 CARET>; };
 				combo_n7 { timeout-ms = <50>; key-positions = <nk2 nk5>; bindings = <&mt N7 AMPS>; };
@@ -107,7 +107,7 @@
 			label = "AUTO_SHIFT";
 			#binding-cells = <2>;
 			tapping_term_ms = <135>;
-			quick_tap_ms = <20>;
+			quick_tap_ms = <50>;
 			flavor = "tap-preferred";
 			bindings = <&kp>, <&kp>;
 		};
@@ -119,17 +119,17 @@
 		default_layer {
 			bindings = <
 			AS(O)		AS(A)		AS(T)		AS(E)
-			&mt DOT SPACE 	AS(TAB)	
+			AS(TAB)		&mt DOT SPACE
 			AS(N)		AS(R)		AS(I)		AS(S)
-			&kp X		&kp BSPC
+			&lt NUMLAYER RET 		&kp BSPC
 			>;
 		};
 
 		number_layer {
 			bindings = <
-			&mt N1 EXCL		&mt N2 AT		&mt N3 HASH		&mt N4 DLLR
-			&mt DOT SPACE 	&kp TAB	
-			&mt PRCT N5		&mt RPAR N0		&kp A		&kp B
+			&mt EXCL N1 	&mt AT N2 	&mt HASH N3 	&mt DLLR N4
+			&kp TAB			&mt DOT SPACE
+			&mt N5 PRCT		&mt N0 RPAR		&kp A		&kp B
 			&kp N9		&none 
 			>;
 		};
@@ -137,7 +137,7 @@
 		symbol_layer {
 			bindings = <
 			&mt N1 EXCL		&mt N2 AT		&mt N3 HASH		&mt N4 DLLR
-			&kp SPACE 	&kp TAB	
+			&kp SPACE DOT 	&kp TAB	
 			&mt PRCT N5		&mt RPAR N0		&kp A		&kp B
 			&none		&none 
 			>;
