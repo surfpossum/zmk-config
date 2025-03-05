@@ -45,7 +45,7 @@
   };
 	
 #define TAPDANCE(NAME, BINDING1, BINDING2, TAPTERM) \
-	td_NAME: tap_dance_NAME { \
+	td_##NAME: tap_dance_##NAME { \
 		compatible = "zmk,behavior-tap-dance"; \
 		#binding-cells = <0>; \
 		tapping-term-ms = <TAPTERM>; \
@@ -134,14 +134,7 @@
 			bindings = <&kp>, <&kp>;
 		};
 		
-		//TAPDANCE(bkspc_numlayer, &kp BSPC, &to NUMLAYER, 150)
-		
-		td_bkspc_numlayer: tap_dance_bkspc_numlayer {
-			compatible = "zmk,behavior-tap-dance";
-			#binding-cells = <0>;
-			tapping-term-ms = <150>;
-			bindings = <&kp BSPC>, <&to NUMLAYER>;
-		};
+		TAPDANCE(bkspc_numlayer, &kp BSPC, &to NUMLAYER, 150)
 	};
 	
 	keymap {
