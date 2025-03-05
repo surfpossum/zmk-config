@@ -62,24 +62,24 @@
 / {
     combos {
         compatible = "zmk,combos";
-				COMBO(c_H, AS(H), kE kN, 0)
-				COMBO(c_D, AS(D), kT kN, 0)
-				COMBO(c_L, AS(L), kA kN, 0)
-				COMBO(c_F, AS(F), kE kR, 0)
-				COMBO(c_C, AS(C), kE kI, 0)
-				COMBO(c_M, AS(M), kT kR, 0)
-				COMBO(c_U, AS(U), kA kR, 0)
-				COMBO(c_G, AS(G), kT kI, 0)
-				COMBO(c_Y, AS(Y), kA kS, 0)
-				COMBO(c_P, AS(P), kN kR, 0)
-				COMBO(c_W, AS(W), kT kE, 0)
-				COMBO(c_B, AS(B), kR kI, 0)
-				COMBO(c_V, AS(V), kA kT, 0)
-				COMBO(c_K, AS(K), kN kI, 0)
-				COMBO(c_J, AS(J), kA kE, 0)
-				COMBO(c_X, AS(X), kR kS, 0)
-				COMBO(c_Z, AS(Z), kO kT, 0)
-				COMBO(c_Q, AS(Q), kO kS, 0)
+				COMBO(c_H, AS(H), kE kN, 0) // hen = h
+				COMBO(c_D, AS(D), kT kN, 0) // dnt = d
+				COMBO(c_L, AS(L), kA kN, 0) // lan = l
+				COMBO(c_F, AS(F), kE kR, 0) // fer = f
+				COMBO(c_C, AS(C), kE kI, 0) // ice = c
+				COMBO(c_M, AS(M), kT kR, 0) // mtr = m
+				COMBO(c_U, AS(U), kA kR, 0) // aur = u
+				COMBO(c_G, AS(G), kT kI, 0) // git = g
+				COMBO(c_Y, AS(Y), kA kS, 0) // yas = y
+				COMBO(c_P, AS(P), kN kR, 0) // prn = p
+				COMBO(c_W, AS(W), kT kE, 0) // wet = w
+				COMBO(c_B, AS(B), kR kI, 0) // bri = b
+				COMBO(c_V, AS(V), kA kT, 0) // vat = v
+				COMBO(c_K, AS(K), kN kI, 0) // kin = k
+				COMBO(c_J, AS(J), kA kE, 0) // jea = j
+				COMBO(c_X, AS(X), kR kS, 0) // xrs = x
+				COMBO(c_Z, AS(Z), kO kT, 0) // zot = z
+				COMBO(c_Q, AS(Q), kO kS, 0) // qos = q
 				
 				COMBO(c_SPCDOT, &mt SPACE DOT, kI kS, 0)
 				COMBO(c_COMMA, &kp COMMA, kO kA, 0)
@@ -155,8 +155,8 @@
 				AS(R)
 				AS(I)
 				AS(S)
-				&kp RET
 				&kp BSPC
+				&kp RET
 			>;
 		};
 
@@ -223,9 +223,9 @@
 				&mkp MB1
 				&mkp MB2
 				&mmv MOVE_UP
-				&mmv MOVE_RIGHT
-				&mmv MOVE_LEFT
 				&mmv MOVE_DOWN
+				&mmv MOVE_LEFT
+				&mmv MOVE_RIGHT
 			>;
 		};
 	};
