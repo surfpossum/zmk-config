@@ -33,6 +33,15 @@
 #define CAD_ESC      &mt LC(LA(DEL)) ESC      //hold: control alt delete | tap: escape
 #define AS(keycode) &as LS(keycode) keycode
 
+// COMBO(one, &kp N1, 0 10, 0)
+#define COMBO(NAME, BINDINGS, KEYPOS, LAYERS) \
+  combo_##NAME { \
+    timeout-ms = <50>; \
+    bindings = <BINDINGS>; \
+    key-positions = <KEYPOS>; \
+    layers = <LAYERS>; \
+  };
+
 // | SW00 | SW01 | SW02 | SW03 | | SW06 | SW07 | SW08 | SW09 |
 // | SW04 | SW05 |                             | SW10 | SW11 |
 //  ---------------------------------------------------------
@@ -42,24 +51,24 @@
 / {
     combos {
         compatible = "zmk,combos";
-				combo_h { timeout-ms = <50>; key-positions = <kE kN>; bindings = <AS(H)>; };
-				combo_d { timeout-ms = <50>; key-positions = <kT kN>; bindings = <AS(D)>; };
-				combo_l { timeout-ms = <50>; key-positions = <kA kN>; bindings = <AS(L)>; };
-				combo_f { timeout-ms = <50>; key-positions = <kE kR>; bindings = <AS(F)>; };
-				combo_c { timeout-ms = <50>; key-positions = <kE kI>; bindings = <AS(C)>; };
-				combo_m { timeout-ms = <50>; key-positions = <kT kR>; bindings = <AS(M)>; };
-				combo_u { timeout-ms = <50>; key-positions = <kA kR>; bindings = <AS(U)>; };
-				combo_g { timeout-ms = <50>; key-positions = <kT kI>; bindings = <AS(G)>; };
-				combo_y { timeout-ms = <50>; key-positions = <kA kS>; bindings = <AS(Y)>; };
-				combo_p { timeout-ms = <50>; key-positions = <kN kR>; bindings = <AS(P)>; };
-				combo_w { timeout-ms = <50>; key-positions = <kT kE>; bindings = <AS(W)>; };
-				combo_b { timeout-ms = <50>; key-positions = <kR kI>; bindings = <AS(B)>; };
-				combo_v { timeout-ms = <50>; key-positions = <kA kT>; bindings = <AS(V)>; };
-				combo_k { timeout-ms = <50>; key-positions = <kN kI>; bindings = <AS(K)>; };
-				combo_j { timeout-ms = <50>; key-positions = <kA kE>; bindings = <AS(J)>; };
-				combo_x { timeout-ms = <50>; key-positions = <kR kS>; bindings = <AS(X)>; };
-				combo_z { timeout-ms = <50>; key-positions = <kO kT>; bindings = <AS(Z)>; };
-				combo_q { timeout-ms = <50>; key-positions = <kO kS>; bindings = <AS(Q)>; };
+				COMBO(c_h, AS(H), kE kN, 0)
+				COMBO(c_d, AS(D), kT kN, 0)
+				COMBO(c_l, AS(L), kA kN, 0)
+				COMBO(c_f, AS(F), kE kR, 0)
+				COMBO(c_c, AS(C), kE kI, 0)
+				COMBO(c_m, AS(M), kT kR, 0)
+				COMBO(c_u, AS(U), kA kR, 0)
+				COMBO(c_g, AS(G), kT kI, 0)
+				COMBO(c_y, AS(Y), kA kS, 0)
+				COMBO(c_p, AS(P), kN kR, 0)
+				COMBO(c_w, AS(W), kT kE, 0)
+				COMBO(c_b, AS(B), kR kI, 0)
+				COMBO(c_v, AS(V), kA kT, 0)
+				COMBO(c_k, AS(K), kN kI, 0)
+				COMBO(c_j, AS(J), kA kE, 0)
+				COMBO(c_x, AS(X), kR kS, 0)
+				COMBO(c_z, AS(Z), kO kT, 0)
+				COMBO(c_q, AS(Q), kO kS, 0)
 				
 				combo_space_dot { timeout-ms = <50>; key-positions = <kI kS>; bindings = <&mt SPACE DOT>; };
 				combo_comma { timeout-ms = <50>; key-positions = <kO kA>; bindings = <&kp COMMA>; };
