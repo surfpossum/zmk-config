@@ -86,15 +86,16 @@
 				COMBO(c_EXCL, &kp EXCL, kO kE, 0)
 				COMBO(c_SQT, &kp SQT, kO kA kN, 0)
 				
-				//combo_numLayer { timeout-ms = <50>; key-positions = <rm2>; bindings = <&mo NUMLAYER>; };
+				COMBO(numLayer, &mo NUMLAYER, rm1 rm2)
 				COMBO(c_n6, &mt N6 CARET, nk1 nk5, 1)
 				COMBO(c_n6b, &mt N6 CARET, nk2 nk4, 1)
 				COMBO(c_n7, &mt N7 AMPS, nk2 nk5, 1)
 				COMBO(c_n7b, &mt N7 AMPS, nk3 nk4, 1)
 				COMBO(c_n8, &mt N8 STAR, nk3 nk5, 1)
 				COMBO(c_n9, &mt N9 LPAR, nk4 nk5, 1)
+				COMBO(c_NY, AS(Y), kE kN, 1)
 				
-				COMBO(c_symLayer, &mo SYMLAYER, rm1 rm2, 0)
+				//COMBO(c_symLayer, &mo SYMLAYER, rm1 rm2, 0)
 				
 				//combo_funcLayer { timeout-ms = <50>; key-positions = <rm1 rm2>; bindings = <&mo FUNCLAYER>; };
 				
@@ -154,7 +155,7 @@
 				AS(I)
 				AS(S)
 				&kp RET
-				&td_bkspc_numlayer
+				&kp BSPC
 			>;
 		};
 
