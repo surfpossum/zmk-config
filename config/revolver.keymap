@@ -137,7 +137,7 @@
 		symbol_layer {
 			bindings = <
 			&mt N1 EXCL		&mt N2 AT		&mt N3 HASH		&mt N4 DLLR
-			&kp SPACE DOT 	&kp TAB	
+			&mt SPACE DOT 	&kp TAB	
 			&mt PRCT N5		&mt RPAR N0		&kp A		&kp B
 			&none		&none 
 			>;
