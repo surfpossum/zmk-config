@@ -180,14 +180,14 @@
 
 		symbol_layer {
 			bindings = <
-				&mt N1 EXCL
-				&mt N2 AT
-				&mt N3 HASH
-				&mt N4 DLLR
+				AS(N1)
+				AS(N2)
+				AS(N3)
+				AS(N4)
 				&mt SPACE DOT
 				&kp TAB	
-				&mt PRCT N5
-				&mt RPAR N0
+				AS(N5)
+				AS(N0)
 				&kp A
 				&kp B
 				&to NUMLAYER
