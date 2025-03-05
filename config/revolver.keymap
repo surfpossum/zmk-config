@@ -134,7 +134,14 @@
 			bindings = <&kp>, <&kp>;
 		};
 		
-		TAPDANCE(bkspc_numlayer, &kp BSPC, &to NUMLAYER, 150)
+		//TAPDANCE(bkspc_numlayer, &kp BSPC, &to NUMLAYER, 150)
+		
+		td_bkspc_numlayer: tap_dance_bkspc_numlayer {
+			compatible = "zmk,behavior-tap-dance";
+			#binding-cells = <0>;
+			tapping-term-ms = <TAPTERM>;
+			bindings = <&kp BSPC>, <&to NUMLAYER>;
+		};
 	};
 	
 	keymap {
@@ -171,7 +178,7 @@
 				&mt RPAR N0
 				&kp A
 				&kp B
-				&kp N9
+				&to SYMLAYER
 				&to 0 
 			>;
 		};
@@ -188,8 +195,8 @@
 				&mt RPAR N0
 				&kp A
 				&kp B
-				&none
-				&none 
+				&to NUMLAYER
+				&to 0 
 			>;
 		};
 
