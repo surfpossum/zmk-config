@@ -139,7 +139,7 @@
 		td_bkspc_numlayer: tap_dance_bkspc_numlayer {
 			compatible = "zmk,behavior-tap-dance";
 			#binding-cells = <0>;
-			tapping-term-ms = <TAPTERM>;
+			tapping-term-ms = <150>;
 			bindings = <&kp BSPC>, <&to NUMLAYER>;
 		};
 	};
