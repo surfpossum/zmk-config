@@ -88,13 +88,13 @@
 				COMBO(c_SQT, &kp SQT, kO kA kN, 0)
 				
 				COMBO(numLayer, &mo NUMLAYER, rm1 rm2, 0 1)
-				COMBO(c_n6, &mt N6 CARET, nk1 nk5, 1)
-				COMBO(c_n6b, &mt N6 CARET, nk2 nk4, 1)
-				COMBO(c_n7, &mt N7 AMPS, nk2 nk5, 1)
-				COMBO(c_n7b, &mt N7 AMPS, nk3 nk4, 1)
-				COMBO(c_n8, &mt N8 STAR, nk3 nk5, 1)
-				COMBO(c_n9, &mt N9 LPAR, nk4 nk5, 1)
-				//combo_numTest { timeout-ms = <200>; key-positions = <3 6>; bindings = <&kp Y>; layers = <1>; };
+				COMBO(c_n6,  AS(N6), nk1 nk5, 1)
+				COMBO(c_n6b, AS(N6), nk2 nk4, 1)
+				COMBO(c_n7,  AS(N7), nk2 nk5, 1)
+				COMBO(c_n7b, AS(N7), nk3 nk4, 1)
+				COMBO(c_n8,  AS(N8), nk3 nk5, 1)
+				//COMBO(c_n9,  AS(N9), nk4 nk5, 1)
+				combo_numTest { timeout-ms = <200>; key-positions = <3 6>; bindings = <&kp N9>; layers = <1>; };
 				
 				//COMBO(c_symLayer, &mo SYMLAYER, rm1 rm2, 0)
 				
