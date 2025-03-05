@@ -86,7 +86,7 @@
 				COMBO(c_EXCL, &kp EXCL, kO kE, 0)
 				COMBO(c_SQT, &kp SQT, kO kA kN, 0)
 				
-				COMBO(numLayer, &mo NUMLAYER, rm1 rm2)
+				COMBO(numLayer, &mo NUMLAYER, rm1 rm2, 0 1)
 				COMBO(c_n6, &mt N6 CARET, nk1 nk5, 1)
 				COMBO(c_n6b, &mt N6 CARET, nk2 nk4, 1)
 				COMBO(c_n7, &mt N7 AMPS, nk2 nk5, 1)
