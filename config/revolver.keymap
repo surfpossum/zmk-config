@@ -79,7 +79,7 @@
 		tapping-term-ms = <TAPTERM>; \
 		bindings = <BINDING1>, <BINDING2>, <BINDING3>, <BINDING4>, <BINDING5>; \
 	};
-#define S_C_A_SC_SA_TD(keycode) TAPDANCE(SCASCSA##keycode, AS(keycode), AC(keycode), AA(keycode), ASC(keycode), ASA(keycode), 150)
+#define S_C_A_SC_SA_TD(keycode) TAPDANCE5(SCASCSA##keycode, AS(keycode), AC(keycode), AA(keycode), ASC(keycode), ASA(keycode), 150)
 #define MODTD(keycode) &td_SCASCSA##keycode
 
 // | SW00 | SW01 | SW02 | SW03 | | SW06 | SW07 | SW08 | SW09 |
