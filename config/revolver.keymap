@@ -35,10 +35,10 @@
 #define rm2 10
 #define CAD_ESC      &mt LC(LA(DEL)) ESC      //hold: control alt delete | tap: escape
 #define AS(keycode) &am LS(keycode) keycode
-#define AC(keycode) &ac LC(keycode) keycode
-#define AA(keycode) &ac LA(keycode) keycode
-#define ASC(keycode) &ac LS(LC(keycode)) keycode
-#define ASA(keycode) &ac LS(LA(keycode)) keycode
+#define AC(keycode) &am LC(keycode) keycode
+#define AA(keycode) &am LA(keycode) keycode
+#define ASC(keycode) &am LS(LC(keycode)) keycode
+#define ASA(keycode) &am LS(LA(keycode)) keycode
 
 // COMBO(one, &kp N1, 0 10, 0)
 #define COMBO(NAME, BINDINGS, KEYPOS, LAYERS) \
