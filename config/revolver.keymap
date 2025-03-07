@@ -34,7 +34,11 @@
 #define rm1 11
 #define rm2 10
 #define CAD_ESC      &mt LC(LA(DEL)) ESC      //hold: control alt delete | tap: escape
-#define AS(keycode) &as LS(keycode) keycode
+#define AS(keycode) &am LS(keycode) keycode
+#define AC(keycode) &ac LC(keycode) keycode
+#define AA(keycode) &ac LA(keycode) keycode
+#define ASC(keycode) &ac LS(LC(keycode)) keycode
+#define ASA(keycode) &ac LS(LA(keycode)) keycode
 
 // COMBO(one, &kp N1, 0 10, 0)
 #define COMBO(NAME, BINDINGS, KEYPOS, LAYERS) \
@@ -45,13 +49,37 @@
     layers = <LAYERS>; \
   };
 	
-#define TAPDANCE(NAME, BINDING1, BINDING2, TAPTERM) \
+#define GET_MACRO(_1,_2,_3,_4,NAME,...) NAME
+#define TAPDANCE(...) GET_MACRO(__VA_ARGS__, TAPDANCE4, TAPDANCE3, TAPDANCE2)(__VA_ARGS__)
+#define TAPDANCE2(NAME, BINDING1, BINDING2, TAPTERM) \
 	td_##NAME: tap_dance_##NAME { \
 		compatible = "zmk,behavior-tap-dance"; \
 		#binding-cells = <0>; \
 		tapping-term-ms = <TAPTERM>; \
 		bindings = <BINDING1>, <BINDING2>; \
 	};
+#define TAPDANCE3(NAME, BINDING1, BINDING2, BINDING3, TAPTERM) \
+	td_##NAME: tap_dance_##NAME { \
+		compatible = "zmk,behavior-tap-dance"; \
+		#binding-cells = <0>; \
+		tapping-term-ms = <TAPTERM>; \
+		bindings = <BINDING1>, <BINDING2>, <BINDING3>; \
+	};
+#define TAPDANCE4(NAME, BINDING1, BINDING2, BINDING3, BINDING4, TAPTERM) \
+	td_##NAME: tap_dance_##NAME { \
+		compatible = "zmk,behavior-tap-dance"; \
+		#binding-cells = <0>; \
+		tapping-term-ms = <TAPTERM>; \
+		bindings = <BINDING1>, <BINDING2>, <BINDING3>, <BINDING4>; \
+	};
+#define TAPDANCE5(NAME, BINDING1, BINDING2, BINDING3, BINDING4, BINDING5, TAPTERM) \
+	td_##NAME: tap_dance_##NAME { \
+		compatible = "zmk,behavior-tap-dance"; \
+		#binding-cells = <0>; \
+		tapping-term-ms = <TAPTERM>; \
+		bindings = <BINDING1>, <BINDING2>, <BINDING3>, <BINDING4>, <BINDING5>; \
+	};
+#define S_C_A_SC_SA_TD(keycode) TAPDANCE(SCASCSA##keycode, AS(keycode), AC(keycode), AA(keycode), ASC(keycode), ASA(keycode), 150)
 
 // | SW00 | SW01 | SW02 | SW03 | | SW06 | SW07 | SW08 | SW09 |
 // | SW04 | SW05 |                             | SW10 | SW11 |
@@ -103,7 +131,8 @@
 				COMBO(c_bluetoothNext, &bt BT_NXT, rm1 lm2, 0)
 				COMBO(c_bluetoothPrev, &bt BT_PRV, rm2 lm1, 0)
 				
-				COMBO(c_mouseLayer, &mo MOUSELAYER, lm1 lm2, 0)
+				COMBO(c_mouseLayer, &to MOUSELAYER, lm1 lm2, 0)
+				COMBO(c_baseLayer, &to 0, lm1 lm2, MOUSELAYER)
 				
 				//delete
 				//arrow keys
@@ -126,17 +155,15 @@
 			ignore-modifiers;
 		};
 		
-		as: auto_shift {
+		am: auto_mod {
 			compatible = "zmk,behavior-hold-tap";
-			label = "AUTO_SHIFT";
+			label = "AUTO_MOD";
 			#binding-cells = <2>;
 			tapping_term_ms = <180>;
 			quick_tap_ms = <50>;
 			flavor = "tap-preferred";
 			bindings = <&kp>, <&kp>;
 		};
-		
-		TAPDANCE(bkspc_numlayer, &kp BSPC, &to NUMLAYER, 150)
 	};
 	
 	keymap {
@@ -223,8 +250,8 @@
 				&mkp MB1
 				&mkp MB2
 				&mmv MOVE_UP
-				&mmv MOVE_DOWN
 				&mmv MOVE_LEFT
+				&mmv MOVE_DOWN
 				&mmv MOVE_RIGHT
 			>;
 		};
