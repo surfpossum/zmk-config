@@ -80,6 +80,7 @@
 		bindings = <BINDING1>, <BINDING2>, <BINDING3>, <BINDING4>, <BINDING5>; \
 	};
 #define S_C_A_SC_SA_TD(keycode) TAPDANCE(SCASCSA##keycode, AS(keycode), AC(keycode), AA(keycode), ASC(keycode), ASA(keycode), 150)
+#define MODTD(keycode) &td_SCASCSA##keycode
 
 // | SW00 | SW01 | SW02 | SW03 | | SW06 | SW07 | SW08 | SW09 |
 // | SW04 | SW05 |                             | SW10 | SW11 |
@@ -94,7 +95,7 @@
 				COMBO(c_D, AS(D), kT kN, 0) // dnt = d
 				COMBO(c_L, AS(L), kA kN, 0) // lan = l
 				COMBO(c_F, AS(F), kE kR, 0) // fer = f
-				COMBO(c_C, S_C_A_SC_SA_TD(C), kE kI, 0) // ice = c
+				COMBO(c_C, AS(C), kE kI, 0) // ice = c
 				COMBO(c_M, AS(M), kT kR, 0) // mtr = m
 				COMBO(c_U, AS(U), kA kR, 0) // aur = u
 				COMBO(c_G, AS(G), kT kI, 0) // git = g
@@ -164,6 +165,8 @@
 			flavor = "tap-preferred";
 			bindings = <&kp>, <&kp>;
 		};
+		
+		S_C_A_SC_SA_TD(A)
 	};
 	
 	keymap {
@@ -172,7 +175,7 @@
 		default_layer {
 			bindings = <
 				AS(O)
-				S_C_A_SC_SA_TD(A)
+				MODTD(A)
 				AS(T)
 				AS(E)
 				&mt DOT SPACE
@@ -250,9 +253,9 @@
 				&mkp MB1
 				&mkp MB2
 				&mmv MOVE_UP
-				&mmv MOVE_LEFT
-				&mmv MOVE_DOWN
 				&mmv MOVE_RIGHT
+				&mmv MOVE_DOWN
+				&mmv MOVE_LEFT
 			>;
 		};
 	};
