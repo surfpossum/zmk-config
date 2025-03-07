@@ -94,7 +94,7 @@
 				COMBO(c_D, AS(D), kT kN, 0) // dnt = d
 				COMBO(c_L, AS(L), kA kN, 0) // lan = l
 				COMBO(c_F, AS(F), kE kR, 0) // fer = f
-				COMBO(c_C, AS(C), kE kI, 0) // ice = c
+				COMBO(c_C, S_C_A_SC_SA_TD(C), kE kI, 0) // ice = c
 				COMBO(c_M, AS(M), kT kR, 0) // mtr = m
 				COMBO(c_U, AS(U), kA kR, 0) // aur = u
 				COMBO(c_G, AS(G), kT kI, 0) // git = g
@@ -172,7 +172,7 @@
 		default_layer {
 			bindings = <
 				AS(O)
-				AS(A)
+				S_C_A_SC_SA_TD(A)
 				AS(T)
 				AS(E)
 				&mt DOT SPACE
