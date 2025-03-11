@@ -177,8 +177,8 @@
 				MODTD(A)
 				AS(T)
 				AS(E)
-				&skq CTRL
-				&skq ALT
+				&skq LCTRL
+				&skq LALT
 				
 				AS(N)
 				AS(R)
