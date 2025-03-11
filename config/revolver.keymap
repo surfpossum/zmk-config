@@ -14,7 +14,6 @@
 #define nk4 3
 #define nk5 6
 
-
 #define SYMLAYER 2
 
 #define FUNCLAYER 3
@@ -99,16 +98,16 @@
 				COMBO(c_M, AS(M), kT kR, 0) // mtr = m
 				COMBO(c_U, AS(U), kA kR, 0) // aur = u
 				COMBO(c_G, AS(G), kT kI, 0) // git = g
-				COMBO(c_Y, AS(Y), kA kS, 0) // yas = y
+				COMBO(c_Y, AS(Y), kA kS, 0) // yas = y *
 				COMBO(c_P, AS(P), kN kR, 0) // prn = p
 				COMBO(c_W, AS(W), kT kE, 0) // wet = w
 				COMBO(c_B, AS(B), kR kI, 0) // bri = b
 				COMBO(c_V, AS(V), kA kT, 0) // vat = v
 				COMBO(c_K, AS(K), kN kI, 0) // kin = k
 				COMBO(c_J, AS(J), kA kE, 0) // jea = j
-				COMBO(c_X, AS(X), kR kS, 0) // xrs = x
-				COMBO(c_Z, AS(Z), kO kT, 0) // zot = z
-				COMBO(c_Q, AS(Q), kO kS, 0) // qos = q
+				COMBO(c_X, AS(X), kR kS, 0) // xrs = x *
+				COMBO(c_Z, AS(Z), kO kT, 0) // zot = z *
+				COMBO(c_Q, AS(Q), kO kS, 0) // qos = q *
 				
 				COMBO(c_SPCDOT, &mt SPACE DOT, kI kS, 0)
 				COMBO(c_COMMA, &kp COMMA, kO kA, 0)
@@ -178,8 +177,8 @@
 				MODTD(A)
 				AS(T)
 				AS(E)
-				&mt DOT SPACE
-				AS(TAB)
+				&skq CTRL
+				&skq ALT
 				
 				AS(N)
 				AS(R)
