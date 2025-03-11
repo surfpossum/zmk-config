@@ -110,6 +110,7 @@
 				COMBO(c_Q, AS(Q), kO kS, 0) // qos = q *
 				
 				COMBO(c_SPCDOT, &mt SPACE DOT, kI kS, 0)
+				COMBO(c_TAB, AS(TAB), kN kI kS, 0)
 				COMBO(c_COMMA, &kp COMMA, kO kA, 0)
 				COMBO(c_QMARK, &kp QMARK, kN kS, 0)
 				COMBO(c_EXCL, &kp EXCL, kO kE, 0)
@@ -177,8 +178,8 @@
 				MODTD(A)
 				AS(T)
 				AS(E)
-				&skq LCTRL
-				&skq LALT
+				&mt SPACE DOT
+				&mt COMMA DEL
 				
 				AS(N)
 				AS(R)
@@ -195,8 +196,8 @@
 				AS(N2)
 				AS(N3)
 				AS(N4)
-				&mt SPACE DOT
-				AS(TAB)
+				&skq LCTRL
+				&skq LALT
 				
 				AS(N5)
 				AS(N0)
