@@ -48,7 +48,7 @@
     layers = <LAYERS>; \
   };
 	
-#define GET_MACRO(_1,_2,_3,_4,NAME,...) NAME
+/*#define GET_MACRO(_1,_2,_3,_4,NAME,...) NAME
 #define TAPDANCE(...) GET_MACRO(__VA_ARGS__, TAPDANCE4, TAPDANCE3, TAPDANCE2)(__VA_ARGS__)
 #define TAPDANCE2(NAME, BINDING1, BINDING2, TAPTERM) \
 	td_##NAME: tap_dance_##NAME { \
@@ -70,7 +70,7 @@
 		#binding-cells = <0>; \
 		tapping-term-ms = <TAPTERM>; \
 		bindings = <BINDING1>, <BINDING2>, <BINDING3>, <BINDING4>; \
-	};
+	};*/
 #define TAPDANCE5(NAME, BINDING1, BINDING2, BINDING3, BINDING4, BINDING5, TAPTERM) \
 	td_##NAME: tap_dance_##NAME { \
 		compatible = "zmk,behavior-tap-dance"; \
@@ -78,7 +78,7 @@
 		tapping-term-ms = <TAPTERM>; \
 		bindings = <BINDING1>, <BINDING2>, <BINDING3>, <BINDING4>, <BINDING5>; \
 	};
-#define S_C_A_SC_SA_TD(keycode) TAPDANCE5(SCASCSA##keycode, AS(keycode), AC(keycode), AA(keycode), ASC(keycode), ASA(keycode), 150)
+#define S_C_A_SC_SA_TD(keycode) TAPDANCE5(SCASCSA##keycode, AC(keycode), AS(keycode), AA(keycode), ASC(keycode), ASA(keycode), 150)
 #define MODTD(keycode) &td_SCASCSA##keycode
 
 // | SW00 | SW01 | SW02 | SW03 | | SW06 | SW07 | SW08 | SW09 |
@@ -178,8 +178,8 @@
 				MODTD(A)
 				AS(T)
 				AS(E)
-				&mt SPACE DOT
-				&mt COMMA DEL
+				&mt DEL COMMA
+				&mt DOT SPACE
 				
 				AS(N)
 				AS(R)
@@ -196,8 +196,8 @@
 				AS(N2)
 				AS(N3)
 				AS(N4)
-				&skq LCTRL
 				&skq LALT
+				&skq LCTRL
 				
 				AS(N5)
 				AS(N0)
@@ -214,8 +214,9 @@
 				AS(N2)
 				AS(N3)
 				AS(N4)
-				&mt SPACE DOT
-				&kp TAB	
+				&skq LALT
+				&skq LCTRL
+				
 				AS(N5)
 				AS(N0)
 				&kp A
@@ -244,12 +245,13 @@
 
 		mouse_layer {
 			bindings = <
-				AS(O)
-				AS(A)
+				&kp LEFT
+				&kp DOWN
 				&msc SCRL_DOWN
 				&msc SCRL_UP
-				&none
-				&none
+				&kp UP
+				&kp RIGHT
+				
 				&mkp MB1
 				&mkp MB2
 				&mmv MOVE_UP
