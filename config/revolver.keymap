@@ -228,7 +228,7 @@
 				AS(MINUS)
 				AS(EQUAL)
 				AS(SLASH)
-				AS(BSLASH)
+				AS(BSLH)
 				&trans
 
 				&mt LT LPAR
