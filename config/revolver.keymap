@@ -189,7 +189,7 @@
 		default_layer {
 			bindings = <
 				AS(O)
-				MODTD(A)
+				AS(A)
 				AS(T)
 				AS(E)
 				&mt TAB DEL
@@ -211,7 +211,7 @@
 				AS(N3)
 				AS(N4)
 				&hm LA(TAB) LALT
-				&skq LC(TAB) LCTRL
+				&hm LC(TAB) LCTRL
 				
 				AS(N5)
 				AS(N0)
