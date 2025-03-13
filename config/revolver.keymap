@@ -208,8 +208,8 @@
 				AS(N2)
 				AS(N3)
 				AS(N4)
-				&skq LALT
-				&skq LCTRL
+				&hm LA(TAB) LALT
+				&skq LC(TAB) LCTRL
 				
 				AS(N5)
 				AS(N0)
