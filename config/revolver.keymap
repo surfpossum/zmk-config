@@ -38,8 +38,8 @@
 #define AA(keycode) &am LA(keycode) keycode
 #define ASC(keycode) &am LS(LC(keycode)) keycode
 #define ASA(keycode) &am LS(LA(keycode)) keycode
-#define HC(keycode) &hm keycode LCTRL
-#define HA(keycode) &hm keycode LALT
+//#define HC(keycode) &hm keycode LCTRL
+//#define HA(keycode) &hm keycode LALT
 
 // COMBO(one, &kp N1, 0 10, 0)
 #define COMBO(NAME, BINDINGS, KEYPOS, LAYERS) \
@@ -191,13 +191,13 @@
 				AS(T)
 				AS(E)
 				&mt SPACE COMMA
-				HC(DEL) 
+				hm DEL LCTRL
 				
 				AS(N)
 				AS(R)
 				AS(I)
 				AS(S)
-				HA(BSPC)
+				hm BSPC LALT
 				&kp DOT RET
 			>;
 		};
