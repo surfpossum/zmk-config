@@ -24,14 +24,14 @@
 #define kA 1
 #define kT 2
 #define kE 3
-#define lm1 5
-#define lm2 4
+#define lmP 5 //pinky
+#define lmR 4 //ring
 #define kN 6
 #define kR 7
 #define kI 8
 #define kS 9
-#define rm1 11
-#define rm2 10
+#define rmP 11 //pinky
+#define rmR 10 //ring
 #define CAD_ESC      &mt LC(LA(DEL)) ESC      //hold: control alt delete | tap: escape
 #define AS(keycode) &am LS(keycode) keycode
 #define AC(keycode) &am LC(keycode) keycode
@@ -118,9 +118,9 @@
 				COMBO(c_EXCL, &kp EXCL, kO kE, 0)
 				COMBO(c_SQT, &kp SQT, kO kA kN, 0)
 
-				COMBO(cadesc, CAD_ESC, kS rm2, 0 1 2 3)
+				COMBO(cadesc, CAD_ESC, kS rmP, 0 1 2 3)
 				
-				COMBO(numLayer, &mo NUMLAYER, rm1 rm2, 0 1)
+				COMBO(numLayer, &mo NUMLAYER, rmR rmP, 0 1)
 				COMBO(c_n6,  AS(N6), nk1 nk5, 1)
 				COMBO(c_n6b, AS(N6), nk2 nk4, 1)
 				COMBO(c_n7,  AS(N7), nk2 nk5, 1)
@@ -129,15 +129,15 @@
 				COMBO(c_n9,  AS(N9), nk4 nk5, 1)
 				//combo_numTest { timeout-ms = <200>; key-positions = <3 6>; bindings = <&kp N9>; layers = <1>; };
 				
-				COMBO(c_symLayer, &mo SYMLAYER, lm2 kO, 0)
+				COMBO(c_symLayer, &mo SYMLAYER, lmP kO, 0)
 				
-				//combo_funcLayer { timeout-ms = <50>; key-positions = <rm1 rm2>; bindings = <&mo FUNCLAYER>; };
+				//combo_funcLayer { timeout-ms = <50>; key-positions = <rmP rmR>; bindings = <&mo FUNCLAYER>; };
 				
-				COMBO(c_bluetoothNext, &bt BT_NXT, rm1 lm2, 0)
-				COMBO(c_bluetoothPrev, &bt BT_PRV, rm2 lm1, 0)
+				COMBO(c_bluetoothNext, &bt BT_NXT, rmP lmR, 0)
+				COMBO(c_bluetoothPrev, &bt BT_PRV, rmR lmP, 0)
 				
-				COMBO(c_mouseLayer, &to MOUSELAYER, lm1 lm2, 0)
-				COMBO(c_baseLayer, &to 0, lm1 lm2, MOUSELAYER)
+				COMBO(c_mouseLayer, &to MOUSELAYER, lmP lmR, 0)
+				COMBO(c_baseLayer, &to 0, lmP lmR, MOUSELAYER)
 				
 				//delete
 				//arrow keys
