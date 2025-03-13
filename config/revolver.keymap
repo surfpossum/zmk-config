@@ -38,6 +38,8 @@
 #define AA(keycode) &am LA(keycode) keycode
 #define ASC(keycode) &am LS(LC(keycode)) keycode
 #define ASA(keycode) &am LS(LA(keycode)) keycode
+#define HC(keycode) &hm keycode LCTRL
+#define HA(keycode) &hm keycode LALT
 
 // COMBO(one, &kp N1, 0 10, 0)
 #define COMBO(NAME, BINDINGS, KEYPOS, LAYERS) \
@@ -166,6 +168,16 @@
 			bindings = <&kp>, <&kp>;
 		};
 		
+		hm: hold_mod {
+			compatible = "zmk,behavior-hold-tap";
+			label = "HOLD_MOD";
+			#binding-cells = <2>;
+			tapping_term_ms = <180>;
+			quick_tap_ms = <50>;
+			flavor = "tap-preferred";
+			bindings = <&kp>, <&skq>;
+		};
+		
 		S_C_A_SC_SA_TD(A)
 	};
 	
@@ -178,15 +190,15 @@
 				MODTD(A)
 				AS(T)
 				AS(E)
-				&mt DEL COMMA
-				&mt DOT SPACE
+				&mt SPACE COMMA
+				HC(DEL) 
 				
 				AS(N)
 				AS(R)
 				AS(I)
 				AS(S)
-				&kp BSPC
-				&kp RET
+				HA(BSPC)
+				&kp DOT RET
 			>;
 		};
 
