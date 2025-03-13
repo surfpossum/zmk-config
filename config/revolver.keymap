@@ -191,7 +191,7 @@
 				AS(T)
 				AS(E)
 				&mt SPACE COMMA
-				&mt DEL AS(TAB)
+				&mt DEL TAB
 				
 				AS(N)
 				AS(R)
