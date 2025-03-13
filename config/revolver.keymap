@@ -177,7 +177,7 @@
 			tapping_term_ms = <180>;
 			quick_tap_ms = <50>;
 			flavor = "tap-preferred";
-			bindings = <&kp>, <&skq>;
+			bindings = <&skq>, <&kp>;
 		};
 		
 		S_C_A_SC_SA_TD(A)
@@ -210,8 +210,8 @@
 				AS(N2)
 				AS(N3)
 				AS(N4)
-				&hm LA(TAB) LALT
-				&hm LC(TAB) LCTRL
+				&hm LALT LA(TAB) 
+				&hm LCTRL LC(TAB)
 				
 				AS(N5)
 				AS(N0)
