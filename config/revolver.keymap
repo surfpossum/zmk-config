@@ -231,10 +231,10 @@
 				AS(BSLASH)
 				&trans
 
+				&mt LT LPAR
+				&mt GT RPAR
 				AS(LBKT)
 				AS(RBKT)
-				AS(COMMA)
-				AS(DOT)
 				AS(SEMI)
 				AS(GRAVE)
 			>;
