@@ -190,15 +190,15 @@
 				MODTD(A)
 				AS(T)
 				AS(E)
-				&mt SPACE COMMA
-				&mt DEL TAB
+				&mt TAB DEL
+				&mt COMMA SPACE
 				
 				AS(N)
 				AS(R)
 				AS(I)
 				AS(S)
-				&hm BSPC LALT
-				&mt DOT RET
+				&mt QMARK BSPC
+				&mt RET DOT
 			>;
 		};
 
