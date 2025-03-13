@@ -191,14 +191,14 @@
 				AS(T)
 				AS(E)
 				&mt SPACE COMMA
-				&hm DEL LCTRL
+				&mt DEL AS(TAB)
 				
 				AS(N)
 				AS(R)
 				AS(I)
 				AS(S)
 				&hm BSPC LALT
-				&kp DOT RET
+				&mt DOT RET
 			>;
 		};
 
