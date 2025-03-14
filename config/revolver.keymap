@@ -109,61 +109,61 @@
 
     combos {
         compatible = "zmk,combos";
-				COMBO(c_H, AS(H), kE kN, 0) // hen = h
-				COMBO(c_D, AS(D), kT kN, 0) // dnt = d
-				COMBO(c_L, AS(L), kA kN, 0) // lan = l
-				COMBO(c_F, AS(F), kE kR, 0) // fer = f
-				COMBO(c_C, AS(C), kE kI, 0) // ice = c
-				COMBO(c_M, AS(M), kT kR, 0) // mtr = m
-				COMBO(c_U, AS(U), kA kR, 0) // aur = u
-				COMBO(c_G, AS(G), kT kI, 0) // git = g
-				COMBO(c_Y, AS(Y), kA kS, 0) // yas = y *
-				COMBO(c_P, AS(P), kN kR, 0) // prn = p
-				COMBO(c_W, AS(W), kT kE, 0) // wet = w
-				COMBO(c_B, AS(B), kR kI, 0) // bri = b
-				COMBO(c_V, AS(V), kA kT, 0) // vat = v
-				COMBO(c_K, AS(K), kN kI, 0) // kin = k
-				COMBO(c_J, AS(J), kA kE, 0) // jea = j
-				COMBO(c_X, AS(X), kR kS, 0) // xrs = x *
-				COMBO(c_Z, AS(Z), kO kT, 0) // zot = z *
-				COMBO(c_Q, AS(Q), kO kS, 0) // qos = q *
-				
-				COMBO(c_SPCDOT, &mt SPACE DOT, kI kS, 0)
-				COMBO(c_TAB, AS(TAB), kN kI kS, 0)
-				COMBO(c_COMMA, &kp COMMA, kO kA, 0)
-				COMBO(c_QMARK, &kp QMARK, kN kS, 0)
-				COMBO(c_EXCL, &kp EXCL, kO kE, 0)
-				COMBO(c_SQT, &kp SQT, kO kA kN, 0)
+		COMBO(c_H, AS(H), kE kN, 0) // hen = h
+		COMBO(c_D, AS(D), kE kA, 0) // dea = d
+		COMBO(c_L, AS(L), kN kR, 0) // lrn = l
+		COMBO(c_F, AS(F), kE kR, 0) // fer = f
+		COMBO(c_C, AS(C), kO kT kA, 0) // taco = c
+		COMBO(c_M, AS(M), kT kR, 0) // mtr = m
+		COMBO(c_U, AS(U), kN kR kI, 0) // urin = u
+		COMBO(c_G, AS(G), kT kI, 0) // git = g
+		COMBO(c_Y, AS(Y), kI kS, 0) // yis = y * pinky
+		COMBO(c_P, AS(P), kA kN, 0) // pan = p
+		COMBO(c_W, AS(W), kE kT, 0) // wet = w
+		COMBO(c_B, AS(B), kR kI, 0) // bri = b
+		COMBO(c_V, AS(V), kA kT, 0) // vat = v
+		COMBO(c_K, AS(K), kA kO, 0) // koa = k * pinky
+		COMBO(c_J, AS(J), kT kN, 0) // jnt = j
+		COMBO(c_X, AS(X), kA kI, 0) // xai = x
+		COMBO(c_Z, AS(Z), kT kO kA, 0) // zota = z * pinky
+		COMBO(c_Q, AS(Q), kO kS, 0) // qos = q * pinky
+		
+		//COMBO(c_SPCDOT, &mt SPACE DOT, kI kS, 0)
+		COMBO(c_TAB, AS(TAB), kR kI kS, 0)
+		//COMBO(c_COMMA, &kp COMMA, kO kA, 0)
+		COMBO(c_QMARK, &kp QMARK, kN kS, 0)
+		//COMBO(c_EXCL, &kp EXCL, kO kE, 0)
+		COMBO(c_SQT, &kp SQT, kO kA kN, 0)
 
-				COMBO(cadesc, CAD_ESC, kS rmP, 0 1 2 3)
-				
-				COMBO(numLayer, &mo NUMLAYER, rmR rmP, 0 1)
-				COMBO(c_n6,  AS(N6), nk1 nk5, 1)
-				COMBO(c_n6b, AS(N6), nk2 nk4, 1)
-				COMBO(c_n7,  AS(N7), nk2 nk5, 1)
-				COMBO(c_n7b, AS(N7), nk3 nk4, 1)
-				COMBO(c_n8,  AS(N8), nk3 nk5, 1)
-				COMBO(c_n9,  AS(N9), nk4 nk5, 1)
-				//combo_numTest { timeout-ms = <200>; key-positions = <3 6>; bindings = <&kp N9>; layers = <1>; };
-				
-				COMBO(c_symLayer, &mo SYMLAYER, lmP kO, 0)
-				
-				//combo_funcLayer { timeout-ms = <50>; key-positions = <rmP rmR>; bindings = <&mo FUNCLAYER>; };
-				
-				COMBO(c_bluetoothNext, &bt_discnxt, rmP lmR, 0)
-				COMBO(c_bluetoothPrev, &bt_discprv, rmR lmP, 0)
-				
-				COMBO(c_mouseLayer, &to MOUSELAYER, lmP lmR, 0)
-				COMBO(c_baseLayer, &to 0, lmP lmR, MOUSELAYER)
-				
-				//delete
-				//arrow keys
-				//brackets
-				//slashes
-				//colon
-				//function
-				//os
-				//mods
+		COMBO(cadesc, CAD_ESC, kS rmP, 0 1 2 3)
+		
+		COMBO(numLayer, &mo NUMLAYER, rmR rmP, 0 1)
+		COMBO(c_n6,  AS(N6), nk1 nk5, 1)
+		COMBO(c_n6b, AS(N6), nk2 nk4, 1)
+		COMBO(c_n7,  AS(N7), nk2 nk5, 1)
+		COMBO(c_n7b, AS(N7), nk3 nk4, 1)
+		COMBO(c_n8,  AS(N8), nk3 nk5, 1)
+		COMBO(c_n9,  AS(N9), nk4 nk5, 1)
+		//combo_numTest { timeout-ms = <200>; key-positions = <3 6>; bindings = <&kp N9>; layers = <1>; };
+		
+		COMBO(c_symLayer, &mo SYMLAYER, lmP kO, 0)
+		
+		//combo_funcLayer { timeout-ms = <50>; key-positions = <rmP rmR>; bindings = <&mo FUNCLAYER>; };
+		
+		COMBO(c_bluetoothNext, &bt_discnxt, rmP lmR, 0)
+		COMBO(c_bluetoothPrev, &bt_discprv, rmR lmP, 0)
+		
+		COMBO(c_mouseLayer, &to MOUSELAYER, lmP lmR, 0)
+		COMBO(c_baseLayer, &to 0, lmP lmR, MOUSELAYER)
+		
+		//delete
+		//arrow keys
+		//brackets
+		//slashes
+		//colon
+		//function
+		//os
+		//mods
     };
 		
 	behaviors {
@@ -209,15 +209,15 @@
 				AS(A)
 				AS(T)
 				AS(E)
-				&mt TAB DEL
 				&mt COMMA SPACE
+				&mt TAB DEL
 				
 				AS(N)
 				AS(R)
 				AS(I)
 				AS(S)
-				&mt QMARK BSPC
 				&mt RET DOT
+				&mt QMARK BSPC
 			>;
 		};
 
