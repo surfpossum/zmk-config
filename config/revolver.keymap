@@ -90,6 +90,16 @@
 // | SPC  | TAB  |                             | RET  | BSPC |
 
 / {
+    macros {
+        bt_discnxt: bt_discnxt {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &bt BT_NXT &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 4 &bt BT_DISC 5>
+                ;
+        };
+    };
+
     combos {
         compatible = "zmk,combos";
 				COMBO(c_H, AS(H), kE kN, 0) // hen = h
