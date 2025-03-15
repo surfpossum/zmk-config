@@ -89,6 +89,30 @@
 // | O    | A    | T    | E    | | N    | R    | I    | S    |
 // | SPC  | TAB  |                             | RET  | BSPC |
 
+/*
+.	N	A	E		T	O	R	,	
+			E		T				I
+					N	O			S
+		A	E						H
+					T	O			D
+			E		T	O			L
+		A	E		T				F
+						O	R		C
+	N	A							M
+	N	A	E						U
+		A				O			G
+	N						R		Y
+					T	O	R		P
+	N	A				O	R		W
+		A	E		T	O			B
+.	N								V
+							R	,	K
+.	N	A							J
+						O	R	,	X
+.	N						R	,	Z 
+.	N	A				O	R	,	Q
+*/
+
 / {
     macros {
         bt_discnxt: bt_discnxt {
@@ -112,20 +136,20 @@
 		COMBO(c_H, AS(H), kE kN, 0) // hen = h
 		COMBO(c_D, AS(D), kE kA, 0) // dea = d
 		COMBO(c_L, AS(L), kN kR, 0) // lrn = l
-		COMBO(c_F, AS(F), kE kR, 0) // fer = f
+		COMBO(c_F, AS(F), kE kR, 0) // fer = f * edit this
 		COMBO(c_C, AS(C), kO kT kA, 0) // taco = c
 		COMBO(c_M, AS(M), kT kR, 0) // mtr = m
 		COMBO(c_U, AS(U), kN kR kI, 0) // urin = u
-		COMBO(c_G, AS(G), kT kI, 0) // git = g
+		COMBO(c_G, AS(G), kT kI, 0) // git = g * edit this
 		COMBO(c_Y, AS(Y), kI kS, 0) // yis = y * pinky
-		COMBO(c_P, AS(P), kA kN, 0) // pan = p
+		COMBO(c_P, AS(P), kA kN, 0) // pan = p * edit this
 		COMBO(c_W, AS(W), kE kT, 0) // wet = w
 		COMBO(c_B, AS(B), kR kI, 0) // bri = b
 		COMBO(c_V, AS(V), kA kT, 0) // vat = v
 		COMBO(c_K, AS(K), kA kO, 0) // koa = k * pinky
-		COMBO(c_J, AS(J), kT kN, 0) // jnt = j
-		COMBO(c_X, AS(X), kA kI, 0) // xai = x
-		COMBO(c_Z, AS(Z), kT kO kA, 0) // zota = z * pinky
+		COMBO(c_J, AS(J), kT kN, 0) // jnt = j * edit this
+		COMBO(c_X, AS(X), kA kI, 0) // xai = x 
+		COMBO(c_Z, AS(Z), kE kO kA, 0) // zota = z * edit this
 		COMBO(c_Q, AS(Q), kO kS, 0) // qos = q * pinky
 		
 		//COMBO(c_SPCDOT, &mt SPACE DOT, kI kS, 0)
@@ -205,18 +229,18 @@
 
 		default_layer {
 			bindings = <
-				AS(O)
+				&mt COMMA SPACE // AS(O)
 				AS(A)
 				AS(T)
 				AS(E)
-				&mt COMMA SPACE
+				&mt COMMA SPACE // edit
 				&mt TAB DEL
 				
 				AS(N)
 				AS(R)
 				AS(I)
-				AS(S)
-				&mt RET DOT
+				&mt RET DOT // AS(S)
+				&mt RET DOT // edit
 				&mt QMARK BSPC
 			>;
 		};
