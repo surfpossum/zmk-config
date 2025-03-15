@@ -211,7 +211,7 @@
 				&mt COMMA SPACE
 				AS(N)
 				AS(A)
-				AS(T)
+				AS(E)
 				AS(SLASH)
 				&mt TAB DEL
 				
