@@ -87,32 +87,8 @@
 // | SW00 | SW01 | SW02 | SW03 | | SW06 | SW07 | SW08 | SW09 |
 // | SW04 | SW05 |                             | SW10 | SW11 |
 //  ---------------------------------------------------------
-// | O    | A    | T    | E    | | N    | R    | I    | S    |
+// | SPC  | N    | A    | E    | | T    | O    | R    | RET  |
 // | SPC  | TAB  |                             | RET  | BSPC |
-
-/*
-.	N	A	E		T	O	R	,	
-			E		T				I
-					N	O			S
-		A	E						H
-					T	O			D
-			E		T	O			L
-		A	E		T				F
-						O	R		C
-	N	A							M
-	N	A	E						U
-		A				O			G
-	N						R		Y
-					T	O	R		P
-	N	A				O	R		W
-		A	E		T	O			B
-.	N								V
-							R	,	K
-.	N	A							J
-						O	R	,	X
-.	N						R	,	Z 
-.	N	A				O	R	,	Q
-*/
 
 / {
     macros {
@@ -134,33 +110,33 @@
 
     combos {
         compatible = "zmk,combos";
-		COMBO(c_I, AS(I), lkI rkI, 0) // ite
-		COMBO(c_S, AS(S), lkM rkM, 0) // 
-		COMBO(c_H, AS(H), lkM lkI, 0)
-		COMBO(c_D, AS(D), rkI rkM, 0)
-		COMBO(c_L, AS(L), lkI rkI rkM, 0)
-		COMBO(c_F, AS(F), lkM lkI rkI, 0)
-		COMBO(c_C, AS(C), rkM rkR, 0)
-		COMBO(c_M, AS(M), lkR lkM, 0)
-		COMBO(c_U, AS(U), lkM rkI, 0)
-		COMBO(c_G, AS(G), lkI rkM, 0)
-		COMBO(c_Y, AS(Y), lkR rkR, 0)
-		COMBO(c_P, AS(P), rkI rkM rkR, 0)
-		COMBO(c_W, AS(W), lkR lkM rkM rkR, 0)
-		COMBO(c_B, AS(B), lkM lkI rkI rkM, 0)
-		COMBO(c_V, AS(V), lkP lkR, 0)
-		COMBO(c_K, AS(K), rkR rkP, 0)
-		COMBO(c_J, AS(J), lkP lkR lkM, 0)
-		COMBO(c_X, AS(X), rkM rkR rkP, 0)
-		COMBO(c_Z , AS(Z ), lkP lkR rkR rkP, 0)
-		COMBO(c_Q, AS(Q), lkP lkR lkM rkM rkR rkP, 0)
+		COMBO(c_I, AS(I), lkI rkI, 0)		//	ITE
+		COMBO(c_S, AS(S), lkM rkM, 0)		//	AOS
+		COMBO(c_H, AS(H), lkM lkI, 0)		//	HAE
+		COMBO(c_D, AS(D), rkI rkM, 0)		//	DOT
+		COMBO(c_L, AS(L), lkI rkI rkM, 0)	//	LETO
+		COMBO(c_F, AS(F), lkM lkI rkI, 0)	//	FATE
+		COMBO(c_C, AS(C), rkM rkR, 0)		//	COR
+		COMBO(c_M, AS(M), lkR lkM, 0)		//	MAN
+		COMBO(c_U, AS(U), lkM rkI, 0)		//	TAU
+		COMBO(c_G, AS(G), lkI rkM, 0)		//	GEO
+		COMBO(c_Y, AS(Y), lkR rkR, 0)		//	YRN
+		COMBO(c_P, AS(P), rkI rkM rkR, 0)	//	PORT
+		COMBO(c_W, AS(W), lkR lkM rkM rkR, 0)	//	NARROW
+		COMBO(c_B, AS(B), lkM lkI rkI rkM, 0)	//	BAETO
+		COMBO(c_V, AS(V), lkP lkR, 0)		//	N.V
+		COMBO(c_K, AS(K), rkR rkP, 0)		//	R,K
+		COMBO(c_J, AS(J), lkP lkR lkM, 0)	//	JAN.
+		COMBO(c_X, AS(X), rkM rkR rkP, 0)	//	XOR,
+		COMBO(c_Z , AS(Z ), lkP lkR rkR rkP, 0)	//	RZN,
+		COMBO(c_Q, AS(Q), lkP lkR lkM rkM rkR rkP, 0)	//QORAN.,
 		
 		//COMBO(c_SPCDOT, &mt SPACE DOT, rkR rkP, 0)
 		COMBO(c_TAB, AS(TAB), rkM rkR rkP, 0)
 		//COMBO(c_COMMA, &kp COMMA, lkP lkR, 0)
 		COMBO(c_QMARK, &kp QMARK, lkI rkP, 0)
 		//COMBO(c_EXCL, &kp EXCL, lkP lkI, 0)
-		COMBO(c_SQT, &kp SQT, lkP lkR lkI, 0)
+		//COMBO(c_SQT, &kp SQT, lkP lkR lkI, 0)
 
 		COMBO(cadesc, CAD_ESC, rkP rmP, 0 1 2 3)
 		
@@ -232,18 +208,18 @@
 
 		default_layer {
 			bindings = <
-				&mt COMMA SPACE // AS(O)
+				&mt COMMA SPACE
 				AS(N)
 				AS(A)
 				AS(T)
-				&mt COMMA SPACE // edit
+				AS(SLASH)
 				&mt TAB DEL
 				
 				AS(T)
 				AS(O)
 				AS(R)
-				&mt RET DOT // AS(S)
-				&mt RET DOT // edit
+				&mt RET DOT
+				AS(SQT)
 				&mt QMARK BSPC
 			>;
 		};
