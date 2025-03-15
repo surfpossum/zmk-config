@@ -153,8 +153,9 @@
 		
 		//combo_funcLayer { timeout-ms = <50>; lkIy-positions = <rmP rmR>; bindings = <&mo FUNCLAYER>; };
 		
-		COMBO(c_bluetoothNext, &bt_discnxt, rmP lmR, 0)
-		COMBO(c_bluetoothPrev, &bt_discprv, rmR lmP, 0)
+		COMBO(c_bluetoothNext, &bt BT_NXT, rmP lmR, 0)
+		COMBO(c_bluetoothPrev, &bt BT_PRV, rmR lmP, 0)
+		COMBO(c_bluetoothDisc, &bt BT_DISC 0 1 2 3 4, lmR lmP rmP, 0)
 		
 		COMBO(c_mouseLayer, &to MOUSELAYER, lmP lmR, 0)
 		COMBO(c_baseLayer, &to 0, lmP lmR, MOUSELAYER)
