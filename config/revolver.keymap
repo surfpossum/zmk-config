@@ -134,24 +134,26 @@
 
     combos {
         compatible = "zmk,combos";
-		COMBO(c_H, AS(H), lkI rkI, 0) // hen = h
-		COMBO(c_D, AS(D), lkI lkR, 0) // dea = d
-		COMBO(c_L, AS(L), rkI rkM, 0) // lrn = l
-		COMBO(c_F, AS(F), lkI rkM, 0) // fer = f * edit this
-		COMBO(c_C, AS(C), lkP lkM lkR, 0) // taco = c
-		COMBO(c_M, AS(M), lkM rkM, 0) // mtr = m
-		COMBO(c_U, AS(U), rkI rkM rkR, 0) // urin = u
-		COMBO(c_G, AS(G), lkM rkR, 0) // git = g * edit this
-		COMBO(c_Y, AS(Y), rkR rkP, 0) // yis = y * pinky
-		COMBO(c_P, AS(P), lkR rkI, 0) // pan = p * edit this
-		COMBO(c_W, AS(W), lkI lkM, 0) // wet = w
-		COMBO(c_B, AS(B), rkM rkR, 0) // bri = b
-		COMBO(c_V, AS(V), lkR lkM, 0) // vat = v
-		COMBO(c_K, AS(K), lkR lkP, 0) // koa = k * pinky
-		COMBO(c_J, AS(J), lkM rkI, 0) // jnt = j * edit this
-		COMBO(c_X, AS(X), lkR rkR, 0) // xai = x 
-		COMBO(c_Z, AS(Z), lkI lkP lkR, 0) // zota = z * edit this
-		COMBO(c_Q, AS(Q), lkP rkP, 0) // qos = q * pinky
+		COMBO(c_I, AS(I), lkI rkI, 0) // ite
+		COMBO(c_S, AS(S), lkM rkM, 0) // 
+		COMBO(c_H, AS(H), lkM lkI, 0)
+		COMBO(c_D, AS(D), rkI rkM, 0)
+		COMBO(c_L, AS(L), lkI rkI rkM, 0)
+		COMBO(c_F, AS(F), lkM lkI rkI, 0)
+		COMBO(c_C, AS(C), rkM rkR, 0)
+		COMBO(c_M, AS(M), lkR lkM, 0)
+		COMBO(c_U, AS(U), lkM rkI, 0)
+		COMBO(c_G, AS(G), lkI rkM, 0)
+		COMBO(c_Y, AS(Y), lkR rkR, 0)
+		COMBO(c_P, AS(P), rkI rkM rkR, 0)
+		COMBO(c_W, AS(W), lkR lkM rkM rkR, 0)
+		COMBO(c_B, AS(B), lkM lkI rkI rkM, 0)
+		COMBO(c_V, AS(V), lkP lkR, 0)
+		COMBO(c_K, AS(K), rkR rkP, 0)
+		COMBO(c_J, AS(J), lkP lkR lkM, 0)
+		COMBO(c_X, AS(X), rkM rkR rkP, 0)
+		COMBO(c_Z , AS(Z ), lkP lkR rkR rkP, 0)
+		COMBO(c_Q, AS(Q), lkP lkR lkM rkM rkR rkP, 0)
 		
 		//COMBO(c_SPCDOT, &mt SPACE DOT, rkR rkP, 0)
 		COMBO(c_TAB, AS(TAB), rkM rkR rkP, 0)
