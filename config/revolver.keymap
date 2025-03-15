@@ -233,15 +233,15 @@
 		default_layer {
 			bindings = <
 				&mt COMMA SPACE // AS(O)
+				AS(N)
 				AS(A)
 				AS(T)
-				AS(E)
 				&mt COMMA SPACE // edit
 				&mt TAB DEL
 				
-				AS(N)
+				AS(T)
+				AS(O)
 				AS(R)
-				AS(I)
 				&mt RET DOT // AS(S)
 				&mt RET DOT // edit
 				&mt QMARK BSPC
