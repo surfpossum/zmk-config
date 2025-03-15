@@ -20,18 +20,19 @@
 
 #define MOUSELAYER 4
 
-#define kO 0
-#define kA 1
-#define kT 2
-#define kE 3
+#define lkP 0 //pinky
+#define lkR 1 //ring
+#define lkM 2 //middle
+#define lkI 3 //index
 #define lmP 5 //pinky
 #define lmR 4 //ring
-#define kN 6
-#define kR 7
-#define kI 8
-#define kS 9
+#define rkI 6
+#define rkM 7
+#define rkR 8
+#define rkP 9
 #define rmP 11 //pinky
 #define rmR 10 //ring
+
 #define CAD_ESC      &mt LC(LA(DEL)) ESC      //hold: control alt delete | tap: escape
 #define AS(keycode) &am LS(keycode) keycode
 #define AC(keycode) &am LC(keycode) keycode
@@ -133,33 +134,33 @@
 
     combos {
         compatible = "zmk,combos";
-		COMBO(c_H, AS(H), kE kN, 0) // hen = h
-		COMBO(c_D, AS(D), kE kA, 0) // dea = d
-		COMBO(c_L, AS(L), kN kR, 0) // lrn = l
-		COMBO(c_F, AS(F), kE kR, 0) // fer = f * edit this
-		COMBO(c_C, AS(C), kO kT kA, 0) // taco = c
-		COMBO(c_M, AS(M), kT kR, 0) // mtr = m
-		COMBO(c_U, AS(U), kN kR kI, 0) // urin = u
-		COMBO(c_G, AS(G), kT kI, 0) // git = g * edit this
-		COMBO(c_Y, AS(Y), kI kS, 0) // yis = y * pinky
-		COMBO(c_P, AS(P), kA kN, 0) // pan = p * edit this
-		COMBO(c_W, AS(W), kE kT, 0) // wet = w
-		COMBO(c_B, AS(B), kR kI, 0) // bri = b
-		COMBO(c_V, AS(V), kA kT, 0) // vat = v
-		COMBO(c_K, AS(K), kA kO, 0) // koa = k * pinky
-		COMBO(c_J, AS(J), kT kN, 0) // jnt = j * edit this
-		COMBO(c_X, AS(X), kA kI, 0) // xai = x 
-		COMBO(c_Z, AS(Z), kE kO kA, 0) // zota = z * edit this
-		COMBO(c_Q, AS(Q), kO kS, 0) // qos = q * pinky
+		COMBO(c_H, AS(H), lkI rkI, 0) // hen = h
+		COMBO(c_D, AS(D), lkI lkR, 0) // dea = d
+		COMBO(c_L, AS(L), rkI rkM, 0) // lrn = l
+		COMBO(c_F, AS(F), lkI rkM, 0) // fer = f * edit this
+		COMBO(c_C, AS(C), lkP lkM lkR, 0) // taco = c
+		COMBO(c_M, AS(M), lkM rkM, 0) // mtr = m
+		COMBO(c_U, AS(U), rkI rkM rkR, 0) // urin = u
+		COMBO(c_G, AS(G), lkM rkR, 0) // git = g * edit this
+		COMBO(c_Y, AS(Y), rkR rkP, 0) // yis = y * pinky
+		COMBO(c_P, AS(P), lkR rkI, 0) // pan = p * edit this
+		COMBO(c_W, AS(W), lkI lkM, 0) // wet = w
+		COMBO(c_B, AS(B), rkM rkR, 0) // bri = b
+		COMBO(c_V, AS(V), lkR lkM, 0) // vat = v
+		COMBO(c_K, AS(K), lkR lkP, 0) // koa = k * pinky
+		COMBO(c_J, AS(J), lkM rkI, 0) // jnt = j * edit this
+		COMBO(c_X, AS(X), lkR rkR, 0) // xai = x 
+		COMBO(c_Z, AS(Z), lkI lkP lkR, 0) // zota = z * edit this
+		COMBO(c_Q, AS(Q), lkP rkP, 0) // qos = q * pinky
 		
-		//COMBO(c_SPCDOT, &mt SPACE DOT, kI kS, 0)
-		COMBO(c_TAB, AS(TAB), kR kI kS, 0)
-		//COMBO(c_COMMA, &kp COMMA, kO kA, 0)
-		COMBO(c_QMARK, &kp QMARK, kN kS, 0)
-		//COMBO(c_EXCL, &kp EXCL, kO kE, 0)
-		COMBO(c_SQT, &kp SQT, kO kA kN, 0)
+		//COMBO(c_SPCDOT, &mt SPACE DOT, rkR rkP, 0)
+		COMBO(c_TAB, AS(TAB), rkM rkR rkP, 0)
+		//COMBO(c_COMMA, &kp COMMA, lkP lkR, 0)
+		COMBO(c_QMARK, &kp QMARK, lkI rkP, 0)
+		//COMBO(c_EXCL, &kp EXCL, lkP lkI, 0)
+		COMBO(c_SQT, &kp SQT, lkP lkR lkI, 0)
 
-		COMBO(cadesc, CAD_ESC, kS rmP, 0 1 2 3)
+		COMBO(cadesc, CAD_ESC, rkP rmP, 0 1 2 3)
 		
 		COMBO(numLayer, &mo NUMLAYER, rmR rmP, 0 1)
 		COMBO(c_n6,  AS(N6), nk1 nk5, 1)
@@ -168,11 +169,11 @@
 		COMBO(c_n7b, AS(N7), nk3 nk4, 1)
 		COMBO(c_n8,  AS(N8), nk3 nk5, 1)
 		COMBO(c_n9,  AS(N9), nk4 nk5, 1)
-		//combo_numTest { timeout-ms = <200>; key-positions = <3 6>; bindings = <&kp N9>; layers = <1>; };
+		//combo_numTest { timeout-ms = <200>; lkIy-positions = <3 6>; bindings = <&kp N9>; layers = <1>; };
 		
-		COMBO(c_symLayer, &mo SYMLAYER, lmP kO, 0)
+		COMBO(c_symLayer, &mo SYMLAYER, lmP lkP, 0)
 		
-		//combo_funcLayer { timeout-ms = <50>; key-positions = <rmP rmR>; bindings = <&mo FUNCLAYER>; };
+		//combo_funcLayer { timeout-ms = <50>; lkIy-positions = <rmP rmR>; bindings = <&mo FUNCLAYER>; };
 		
 		COMBO(c_bluetoothNext, &bt_discnxt, rmP lmR, 0)
 		COMBO(c_bluetoothPrev, &bt_discprv, rmR lmP, 0)
