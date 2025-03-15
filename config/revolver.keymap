@@ -99,11 +99,18 @@
                 = <&macro_tap &bt BT_NXT &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 4>
                 ;
         };
-				bt_discprv: bt_discprv {
+	bt_discprv: bt_discprv {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
                 = <&macro_tap &bt BT_PRV &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 4>
+                ;
+        };
+	bt_disc: bt_disc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 4>
                 ;
         };
     };
@@ -155,7 +162,7 @@
 		
 		COMBO(c_bluetoothNext, &bt BT_NXT, rmP lmR, 0)
 		COMBO(c_bluetoothPrev, &bt BT_PRV, rmR lmP, 0)
-		COMBO(c_bluetoothDisc, &bt BT_DISC 0 1 2 3 4, lmR lmP rmP, 0)
+		COMBO(c_bluetoothDisc, &bt_disc, lmR lmP rmP, 0)
 		
 		COMBO(c_mouseLayer, &to MOUSELAYER, lmP lmR, 0)
 		COMBO(c_baseLayer, &to 0, lmP lmR, MOUSELAYER)
