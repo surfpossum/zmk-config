@@ -20,7 +20,7 @@
 ---
 include:
   - board: nice_nano_v2
-    shield: revolver_left
+    shield: revolver_left nice_view
   - board: nice_nano_v2
     shield: revolver_right
   - board: nice_nano_v2
