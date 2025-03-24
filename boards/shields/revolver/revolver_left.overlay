@@ -2,17 +2,19 @@
 
 #include "revolver.dtsi"
 
-/*&pinctrl {
+&pinctrl {
     spi0_default: spi0_default {
         group1 {
             psels = <NRF_PSEL(SPIM_SCK, 0, 104)>,
-                <NRF_PSEL(SPIM_MOSI, 0, 106)>;
+                <NRF_PSEL(SPIM_MOSI, 0, 106)>,
+                <NRF_PSEL(SPIM_MISO, 0, 25)>;
         };
     };
     spi0_sleep: spi0_sleep {
         group1 {
             psels = <NRF_PSEL(SPIM_SCK, 0, 104)>,
-                <NRF_PSEL(SPIM_MOSI, 0, 106)>;
+                <NRF_PSEL(SPIM_MOSI, 0, 106)>,
+                <NRF_PSEL(SPIM_MISO, 0, 25)>;
             low-power-enable;
         };
     };
@@ -28,4 +30,4 @@ nice_view_spi: &spi0 {
 
 &pro_micro_i2c {
     status = "disabled";
-};*/
+};
