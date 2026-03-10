@@ -121,8 +121,8 @@
 		COMBO(c_S, AS(S), lkM rkM, 0)		//	AOS
 		COMBO(c_H, AS(H), lkM lkI, 0)		//	HAE
 		COMBO(c_D, AS(D), rkI rkM, 0)		//	DOT
-		COMBO(c_F, AS(F), rkI rkM rkR rkP, 0)	//	FUTOR
-		COMBO(c_L, AS(L), lkI lkM lkR lkP, 0)	//	LANGE
+		COMBO(c_F, AS(F), rkM rkR rkP, 0)	//	FORU
+		COMBO(c_L, AS(L), lkM lkR lkP, 0)	//	LANG
 		COMBO(c_C, AS(C), rkM rkR, 0)		//	COR
 		COMBO(c_M, AS(M), lkR lkM, 0)		//	MAN
 		COMBO(c_Y, AS(Y), lkR rkR, 0)		//	YRN
@@ -131,8 +131,8 @@
 		COMBO(c_B, AS(B), lkM lkI rkI rkM, 0)	//	BAETO
 		COMBO(c_V, AS(V), lkP lkR, 0)		//	VEGAN
 		COMBO(c_K, AS(K), rkR rkP, 0)		//	KURD
-		COMBO(c_J, AS(J), lkP lkR lkM, 0)	//	JANG
-		COMBO(c_X, AS(X), rkM rkR rkP, 0)	//	XORU
+		COMBO(c_J, AS(J), lkI lkP lkR lkM, 0)	//	JGNAE
+		COMBO(c_X, AS(X), rkI rkM rkR rkP, 0)	//	XTORU
 		COMBO(c_Z , AS(Z ), lkP lkR rkR rkP, 0)	//	Z OUTER FOUR
 		COMBO(c_Q, AS(Q), lkP lkR lkM rkM rkR rkP, 0)	//Q OUTER SIX
 		
